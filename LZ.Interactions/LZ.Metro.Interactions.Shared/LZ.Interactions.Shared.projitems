@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{32bcfba5-6833-4d18-860c-5f3d636ad5a0}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>4361d5c0-7f47-4f48-bea8-8bfdd11bc2fd</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>LZ.Interactions</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)CommandBusyIndicationBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IActionExecuteParameterConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)InvokeCommandAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyDownTrigger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)LoadRelayBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NavigateByInputBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NavigatorBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SelectionBindingBehavior.cs" />
+  </ItemGroup>
+</Project>
