@@ -16,18 +16,23 @@ namespace LZ.Interactions
 		#region Dependency Properties
 
 		#region SelectedItems
+
 		public static readonly DependencyProperty SelectedItemsProperty = DependencyProperty.Register("SelectedItems", typeof(IList), typeof(SelectionBindingBehavior), new PropertyMetadata(null));
-		/// <summary>An IList containing the selected items.</summary>
+		/// <summary>
+		/// An IList containing the selected items.
+		/// </summary>
 		public IList SelectedItems
 		{
 			get { return (IList)GetValue(SelectedItemsProperty); }
 			set { SetValue(SelectedItemsProperty, value); }
 		}
+
 		#endregion
 
 		#endregion
 
 		#region Behavior<T>
+
 		protected override void OnAttached()
 		{
 			AssociatedObject.SelectionChanged += Selector_SelectionChanged;
@@ -37,9 +42,11 @@ namespace LZ.Interactions
 		{
 			AssociatedObject.SelectionChanged -= Selector_SelectionChanged;
 		}
+
 		#endregion
 
 		#region Event Handlers
+
 		void Selector_SelectionChanged(object sender, SelectionChangedEventArgs e)
 		{
 			if (SelectedItems == null)
@@ -62,6 +69,7 @@ namespace LZ.Interactions
 				}
 			}
 		}
+
 		#endregion
 	}
 }

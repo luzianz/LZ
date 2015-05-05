@@ -9,13 +9,16 @@ namespace LZ.Async
 	public class AsyncLazy<T> : IAsyncResource<T>
 	{
 		#region Fields
+
 		private readonly Func<Task<T>> getAsync;
 		private readonly bool retryNullResult;
 		private T data;
 		private bool wasFetched;
+
 		#endregion
 
 		#region Constructor
+
 		public AsyncLazy(Func<Task<T>> getAsync, bool retryNullResult = false)
 		{
 			if (getAsync == null) throw new ArgumentNullException("getAsync");
@@ -23,9 +26,11 @@ namespace LZ.Async
 
 			this.retryNullResult = retryNullResult;
 		}
+
 		#endregion
 
 		#region IAsyncResource<T>
+
 		public async Task<T> GetAsync()
 		{
 			if (!wasFetched)
@@ -36,6 +41,7 @@ namespace LZ.Async
 			}
 			return data;
 		}
+
 		#endregion
 	}
 }

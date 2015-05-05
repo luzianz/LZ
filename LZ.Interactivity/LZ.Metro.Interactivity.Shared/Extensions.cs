@@ -14,6 +14,7 @@ namespace LZ.Interactivity
 			};
 			el.SetBinding(FrameworkElement.DataContextProperty, binding);
 		}
+
 		public static void Unbind(this FrameworkElement el)
 		{
 			el.ClearValue(FrameworkElement.DataContextProperty);

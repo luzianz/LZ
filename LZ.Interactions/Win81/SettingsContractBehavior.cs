@@ -10,23 +10,28 @@ namespace LZ.Interactions
 	[ContentProperty(Name = "SettingsPaneEntries")]
 	public class SettingsContractBehavior : DependencyObject, IBehavior
 	{
+		#region Fields
+
+		private SettingsPane settingsPane;
+
+		#endregion
+
 		#region Dependency Properties
 
 		#region SettingsPaneEntries
+
 		public static readonly DependencyProperty SettingsPaneEntriesProperty = DependencyProperty.Register("SettingsPaneEntries", typeof(DependencyObjectCollection), typeof(SettingsContractBehavior), new PropertyMetadata(new DependencyObjectCollection()));
 		public DependencyObjectCollection SettingsPaneEntries
 		{
 			get { return (DependencyObjectCollection)GetValue(SettingsPaneEntriesProperty); }
 		}
-		#endregion
 
 		#endregion
 
-		#region Fields
-		private SettingsPane settingsPane;
 		#endregion
 
 		#region IBehavior
+
 		public DependencyObject AssociatedObject { get; private set; }
 
 		public void Attach(DependencyObject associatedObject)
@@ -41,9 +46,11 @@ namespace LZ.Interactions
 		{
 			settingsPane.CommandsRequested -= settingsPane_CommandsRequested;
 		}
+
 		#endregion
 
 		#region Event Handlers
+
 		void settingsPane_CommandsRequested(SettingsPane sender, SettingsPaneCommandsRequestedEventArgs args)
 		{
 			if (SettingsPaneEntries == null) return;
@@ -70,6 +77,7 @@ namespace LZ.Interactions
 				args.Request.ApplicationCommands.Add(command);
 			}
 		}
+
 		#endregion
 	}
 }

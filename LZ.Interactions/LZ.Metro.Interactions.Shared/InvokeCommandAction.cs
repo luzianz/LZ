@@ -12,30 +12,36 @@ namespace LZ.Interactions
 		#region Dependency Properties
 
 		#region Command
+
 		public static readonly DependencyProperty CommandProperty = DependencyProperty.Register("Command", typeof(ICommand), typeof(InvokeCommandAction), new PropertyMetadata(null));
 		public ICommand Command
 		{
 			get { return (ICommand)GetValue(CommandProperty); }
 			set { SetValue(CommandProperty, value); }
 		}
+
 		#endregion
 
 		#region CommandParameter
+
 		public static readonly DependencyProperty CommandParameterProperty = DependencyProperty.Register("CommandParameter", typeof(object), typeof(InvokeCommandAction), new PropertyMetadata(null));
 		public object CommandParameter
 		{
 			get { return (object)GetValue(CommandParameterProperty); }
 			set { SetValue(CommandParameterProperty, value); }
 		}
+
 		#endregion
 
 		#region ParameterConverter
+
 		public static readonly DependencyProperty ParameterConverterProperty = DependencyProperty.Register("ParameterConverter", typeof(IActionExecuteParameterConverter), typeof(InvokeCommandAction), new PropertyMetadata(null));
 		public IActionExecuteParameterConverter ParameterConverter
 		{
 			get { return (IActionExecuteParameterConverter)GetValue(ParameterConverterProperty); }
 			set { SetValue(ParameterConverterProperty, value); }
 		}
+
 		#endregion
 
 		#endregion

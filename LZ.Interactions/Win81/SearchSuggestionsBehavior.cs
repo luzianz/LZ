@@ -8,7 +8,11 @@ namespace LZ.Interactions
 {
 	public class SearchSuggestionsBehavior : Behavior<SearchBox>
 	{
+		#region Fields
+
 		private string previousQueryText;
+
+		#endregion
 
 		#region Dependency Properties
 		public static readonly DependencyProperty CollectionProperty = DependencyProperty.Register("Collection", typeof(object), typeof(SearchSuggestionsBehavior), new PropertyMetadata(null));

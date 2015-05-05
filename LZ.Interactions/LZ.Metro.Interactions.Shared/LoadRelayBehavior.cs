@@ -14,6 +14,7 @@ namespace LZ.Interactions
 		#region Dependency Properties
 
 		#region Target
+
 		public static readonly DependencyProperty TargetProperty = DependencyProperty.Register("Target", typeof(object), typeof(LoadRelayBehavior), new PropertyMetadata(null));
 		/// <summary>
 		/// An object that implements ILoadable.
@@ -24,6 +25,7 @@ namespace LZ.Interactions
 			get { return (object)GetValue(TargetProperty); }
 			set { SetValue(TargetProperty, value); }
 		}
+
 		#endregion
 
 		#region IsLoading

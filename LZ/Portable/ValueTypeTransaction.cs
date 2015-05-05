@@ -13,9 +13,11 @@ namespace LZ
 	public class ValueTypeTransaction<T> : IDisposable where T : struct
 	{
 		#region Fields
+
 		private T backup;
 		private Action<T> recovery;
 		private bool isEditing;
+
 		#endregion
 
 		/// <param name="source">The original value</param>
@@ -39,6 +41,8 @@ namespace LZ
 			recovery = null;
 		}
 
+		#region IDisposable
+
 		public void Dispose()
 		{
 			if (isEditing)
@@ -49,5 +53,7 @@ namespace LZ
 				recovery = null;
 			}
 		}
+
+		#endregion
 	}
 }

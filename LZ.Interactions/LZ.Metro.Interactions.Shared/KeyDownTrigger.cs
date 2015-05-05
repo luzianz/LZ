@@ -17,6 +17,7 @@ namespace LZ.Interactions
 		#region Dependency Properties
 
 		#region TriggerKey
+
 		public static readonly DependencyProperty TriggerKeyProperty = DependencyProperty.Register("TriggerKey", typeof(object), typeof(KeyDownTrigger), new PropertyMetadata(VirtualKey.None));
 		/// <summary>The keyboard key which activates this trigger</summary>
 		public object TriggerKey
@@ -24,6 +25,7 @@ namespace LZ.Interactions
 			get { return GetValue(TriggerKeyProperty); }
 			set { SetValue(TriggerKeyProperty, value); }
 		}
+
 		#endregion
 
 		#endregion

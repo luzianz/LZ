@@ -2,11 +2,17 @@
 {
     internal struct RequestToken : ICredential
 	{
-		#region ICredential
-		public string Key { get; set; }
-		public string Secret { get; set; }
-		#endregion
+		#region Properties
 
 		public bool IsCallbackConfirmed { get; set; }
+
+		#endregion
+
+		#region ICredential
+
+		public string Key { get; set; }
+		public string Secret { get; set; }
+
+		#endregion
 	}
 }

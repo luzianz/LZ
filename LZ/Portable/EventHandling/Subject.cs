@@ -6,17 +6,22 @@ namespace LZ.EventHandling
 	public class Subject<T> : Publisher<T>, IObserver<T>
 	{
 		#region Fields
+
 		private readonly List<IObserver<T>> observers;
+
 		#endregion
 
 		#region Constructor
+
 		public Subject()
 		{
 			observers = new List<IObserver<T>>();
 		}
+
 		#endregion
 
 		#region Publisher<T>
+
 		protected override void AddObserver(IObserver<T> observer)
 		{
 			observers.Add(observer);
@@ -26,9 +31,11 @@ namespace LZ.EventHandling
 		{
 			observers.Remove(observer);
 		}
+
 		#endregion
 
 		#region IObserver<T>
+
 		public void OnCompleted()
 		{
 			foreach (var observer in observers)
@@ -53,6 +60,7 @@ namespace LZ.EventHandling
 				observer.OnNext(value);
 			}
 		}
+
 		#endregion
 	}
 }

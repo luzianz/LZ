@@ -17,17 +17,20 @@ namespace LZ.Interactions
 		#region Dependency Properties
 
 		#region Command
+
 		public static readonly DependencyProperty CommandProperty = DependencyProperty.Register("Command", typeof(ICommand), typeof(CommandBusyIndicationBehavior), new PropertyMetadata(null, OnCommandChanged));
 		public ICommand Command
 		{
 			get { return (ICommand)GetValue(CommandProperty); }
 			set { SetValue(CommandProperty, value); }
 		}
+
 		#endregion
 
 		#endregion
 
 		#region Dependency Property Change Event Handlers
+
 		private static void OnCommandChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
 		{
 			var behavior = d as CommandBusyIndicationBehavior;
@@ -55,14 +58,17 @@ namespace LZ.Interactions
 				newCommand.CanExecuteChanged += command_CanExecuteChanged;
 			}
 		}
+
 		#endregion
 
 		#region Behavior<ProgressRing>
+
 		protected override void OnDetaching()
 		{
 			base.OnDetaching();
 			Command = null;
 		}
+
 		#endregion
 	}
 }

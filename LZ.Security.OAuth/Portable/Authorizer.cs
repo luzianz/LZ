@@ -6,16 +6,19 @@ namespace LZ.Security.OAuth
 {
 	public class Authorizer
 	{
-
 		#region Fields
+
 		private readonly ICredential consumerCredentials;
+
 		#endregion
 
 		#region Constructor
+
 		public Authorizer(ICredential consumerCredentials)
 		{
 			this.consumerCredentials = consumerCredentials;
 		}
+
 		#endregion
 
 		public async Task<ICredential> AuthorizeAsync(string requestTokenUrl, string authorizeUrl, string accessTokenUrl)

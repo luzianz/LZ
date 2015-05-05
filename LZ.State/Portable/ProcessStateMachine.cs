@@ -2,6 +2,8 @@
 {
 	public class ProcessStateMachine : StateMachine<ProcessState, ProcessActions>
 	{
+		#region Constructor
+
 		public ProcessStateMachine()
 		{
 			Transitions.Add(
@@ -15,5 +17,7 @@
 					ProcessActions.End,
 					ProcessState.Inactive));
 		}
+
+		#endregion
 	}
 }

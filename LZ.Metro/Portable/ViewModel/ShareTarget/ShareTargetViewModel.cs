@@ -118,7 +118,7 @@ namespace LZ.Metro.ViewModel
 
 		void IShareCommandContext.RaiseSharing(ITaskCompletionEventArgs args)
 		{
-			Sharing.TryRaiseEvent(this, args);
+			Sharing.RaiseEvent(this, args);
 		}
 
 		ShareOperation IShareCommandContext.ShareOperation

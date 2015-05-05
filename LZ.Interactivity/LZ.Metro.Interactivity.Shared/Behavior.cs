@@ -7,23 +7,33 @@ namespace LZ.Interactivity
 	public class Behavior : FrameworkElement, IBehavior
 	{
 		#region IBehavior
+
 		public DependencyObject AssociatedObject { get; private set; }
+
 		public void Attach(DependencyObject associatedObject)
 		{
 			OnAttaching(associatedObject);
 			OnAttached();
 		}
+
 		public void Detach()
 		{
 			OnDetaching();
 		}
+
 		#endregion
+
+		#region Virtual
 
 		protected virtual void OnAttaching(DependencyObject associatedObject)
 		{
 			this.AssociatedObject = associatedObject;
 		}
+
 		protected virtual void OnAttached() { }
+
 		protected virtual void OnDetaching() { }
+
+		#endregion
 	}
 }

@@ -15,21 +15,25 @@ namespace LZ.Interactions
 	public class NavigateByInputBehavior : Behavior<Page>
 	{
 		#region Behavior<Page>
+
 		protected override void OnAttached()
 		{
 			base.OnAttached();
 			AssociatedObject.Loaded += Page_Loaded;
 			AssociatedObject.Unloaded += Page_Unloaded;
 		}
+
 		protected override void OnDetaching()
 		{
 			base.OnDetaching();
 			AssociatedObject.Loaded -= Page_Loaded;
 			AssociatedObject.Unloaded -= Page_Unloaded;
 		}
+
 		#endregion
 
 		#region Event Handlers
+
 		void Page_Loaded(object sender, RoutedEventArgs e)
 		{
 			// Keyboard and mouse navigation only apply when occupying the entire window
@@ -102,6 +106,7 @@ namespace LZ.Interactions
 				}
 			}
 		}
+
 		#endregion
 	}
 }

@@ -9,12 +9,15 @@ namespace LZ
 	public class ObjectTransaction<T> : IDisposable where T : class, ICopyable<T>, new()
 	{
 		#region Fields
+
 		private T backup;
 		private T source;
 		private bool isEditing;
+
 		#endregion
 
 		#region Constructor
+
 		public ObjectTransaction(ref T source)
 		{
 			isEditing = true;
@@ -24,6 +27,7 @@ namespace LZ
 
 			this.source = source;
 		}
+
 		#endregion
 
 		public void Commit()
@@ -35,6 +39,7 @@ namespace LZ
 		}
 
 		#region IDisposable
+
 		public void Dispose()
 		{
 			if (isEditing)
@@ -44,6 +49,7 @@ namespace LZ
 				backup = null;
 			}
 		}
+
 		#endregion
 	}
 }

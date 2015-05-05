@@ -5,9 +5,13 @@
 	/// </summary>
 	public class DisabledCommand : Command
 	{
+		#region Command
+
 		public override bool CanExecute(object parameter)
 		{
 			return false;
 		}
+
+		#endregion
 	}
 }

@@ -16,21 +16,6 @@ namespace LZ
 
 		#endregion
 
-		#region Constructors
-
-		public ObservableBox(Action onValueChanged = null)
-		{
-			this.onValueChanged = onValueChanged;
-		}
-
-		public ObservableBox(T initialValue, Action onValueChanged = null)
-			: this(onValueChanged)
-		{
-			_Value = initialValue;
-		}
-
-		#endregion
-
 		#region Properties
 
 		private T _Value;
@@ -44,6 +29,21 @@ namespace LZ
 				_Value = value;
 				onValueChanged();
 			}
+		}
+
+		#endregion
+
+		#region Constructors
+
+		public ObservableBox(Action onValueChanged = null)
+		{
+			this.onValueChanged = onValueChanged;
+		}
+
+		public ObservableBox(T initialValue, Action onValueChanged = null)
+			: this(onValueChanged)
+		{
+			_Value = initialValue;
 		}
 
 		#endregion
