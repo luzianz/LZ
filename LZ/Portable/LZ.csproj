@@ -87,6 +87,8 @@
     <Compile Include="Converter.cs" />
     <Compile Include="DelegateDisposer.cs" />
     <Compile Include="DelegateObserver.cs" />
+    <Compile Include="EditableObject.cs" />
+    <Compile Include="EditableObjectBase.cs" />
     <Compile Include="Enumerable\Extensions.cs" />
     <Compile Include="EventHandling\EventArgs.cs" />
     <Compile Include="EventHandling\Extensions.cs" />
