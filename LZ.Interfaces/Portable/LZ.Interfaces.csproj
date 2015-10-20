@@ -53,6 +53,7 @@
     <Compile Include="EventHandling\ITaskCompletionEventArgs.cs" />
     <Compile Include="Async\IAsyncResource.cs" />
     <Compile Include="Async\ICancellableAsyncResource.cs" />
+    <Compile Include="IBox.cs" />
     <Compile Include="IClonable.cs" />
     <Compile Include="IConverter.cs" />
     <Compile Include="ICopyable.cs" />
