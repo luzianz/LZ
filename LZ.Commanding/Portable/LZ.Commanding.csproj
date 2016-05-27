@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{ACBF33A7-AA4F-4877-ACD7-2656156CBD51}</ProjectGuid>
@@ -13,8 +13,8 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -50,13 +50,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AsyncCommand.cs" />
+    <Compile Include="CancelCommand.cs" />
     <Compile Include="Command.cs" />
-    <Compile Include="DelegateAsyncCommand.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="DisabledCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\LZ.Interfaces\Portable\LZ.Interfaces.csproj">
+      <Project>{e57b26bf-aa35-4af5-9625-6b379ad5efb3}</Project>
+      <Name>LZ.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\LZ\Portable\LZ.csproj">
       <Project>{d61a9773-8e2e-470c-8d91-3760e9aec8bc}</Project>
       <Name>LZ</Name>

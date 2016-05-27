@@ -6,26 +6,26 @@ using Windows.ApplicationModel.Activation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using System.Threading;
 
-namespace LZ.Metro
-{
+namespace LZ.Metro {
+
 	/// <summary>
 	/// Manages application lifecycle.
 	/// </summary>
-	public class ApplicationLifeCycleManager
-	{
+	public class ApplicationLifeCycleManager {
+
 		#region Events
 
 		public event EventHandler<IEventArgs<Frame>> RootFrameCreated;
-		public event EventHandler<ITaskCompletionEventArgs> SavingState;
-		public event EventHandler<ITaskCompletionEventArgs> LoadingState;
+		public event EventHandler<IDeferralProvider> SavingState;
+		public event EventHandler<IDeferralProvider> LoadingState;
 
 		#endregion
 
 		#region Constructor
 
-		public ApplicationLifeCycleManager(Application app)
-		{
+		public ApplicationLifeCycleManager(Application app) {
 			app.Suspending += OnSuspending;
 		}
 
@@ -34,14 +34,12 @@ namespace LZ.Metro
 		/// <summary>
 		/// Pass the application launch event to this method.
 		/// </summary>
-		public async void Launch(Type startPageType, ApplicationExecutionState previousExecutionState, string args)
-		{
+		public async void Launch(Type startPageType, ApplicationExecutionState previousExecutionState, string args) {
 			Frame rootFrame = Window.Current.Content as Frame;
 
 			// Do not repeat app initialization when the Window already has content,
 			// just ensure that the window is active
-			if (rootFrame == null)
-			{
+			if (rootFrame == null) {
 				// Create a Frame to act as the navigation context and navigate to the first page
 				rootFrame = new Frame();
 				// Set the default language
@@ -49,22 +47,17 @@ namespace LZ.Metro
 
 				rootFrame.NavigationFailed += OnNavigationFailed;
 
-				if (previousExecutionState == ApplicationExecutionState.Terminated)
-				{
-					await LoadingState.InvokeAsync(this);
+				if (previousExecutionState == ApplicationExecutionState.Terminated) {
+					await LoadingState.InvokeAsync(this, CancellationToken.None);
 				}
 
 				// Place the frame in the current Window
 				Window.Current.Content = rootFrame;
 			}
 
-			if (RootFrameCreated != null)
-			{
-				RootFrameCreated(this, new EventArgs<Frame>(rootFrame));
-			}
+			RootFrameCreated?.Invoke(this, new EventArgs<Frame>(rootFrame));
 
-			if (rootFrame.Content == null)
-			{
+			if (rootFrame.Content == null) {
 				// When the navigation stack isn't restored navigate to the first page,
 				// configuring the new page by passing required information as a navigation
 				// parameter
@@ -76,18 +69,18 @@ namespace LZ.Metro
 
 		#region Event Handlers
 
-		async void OnSuspending(object sender, SuspendingEventArgs e)
-		{
+		async void OnSuspending(object sender, SuspendingEventArgs e) {
 			var deferral = e.SuspendingOperation.GetDeferral();
 
-			await SavingState.InvokeAsync(this);
-
-			deferral.Complete();
+			try {
+				await SavingState.InvokeAsync(this, CancellationToken.None);
+			} finally {
+				deferral.Complete();
+			}
 		}
 
-		void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
-		{
-			throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
+		void OnNavigationFailed(object sender, NavigationFailedEventArgs e) {
+			throw new Exception($"Failed to load Page '{e.SourcePageType.FullName}'");
 		}
 
 		#endregion

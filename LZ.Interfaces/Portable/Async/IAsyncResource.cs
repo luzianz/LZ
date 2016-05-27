@@ -1,12 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 
-namespace LZ.Async
-{
+namespace LZ.Async {
+
 	/// <summary>
 	/// Fetches a resource asynchronously.
 	/// </summary>
-	public interface IAsyncResource<T>
-	{
-		Task<T> GetAsync();
+	public interface IAsyncResource<T> {
+
+		Task<T> GetAsync(CancellationToken cancellationToken);
 	}
 }

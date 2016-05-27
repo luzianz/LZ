@@ -2,113 +2,65 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Windows.Foundation;
 
-namespace LZ.Async
-{
-	/// <summary>
-	/// A delegate representing an async operation.
-	/// </summary>
-	/// <typeparam name="T">Async return type.</typeparam>
-	/// <param name="onResult">Action invoked when on completion and result is acquired.</param>
-	/// <param name="onError">Action invoked when an error occurs.</param>
-	/// <returns>Action to be invoked to request cancellation.</returns>
-	public delegate Action AsyncMethod<T>(Action<T> onResult, Action<Exception> onError);
+namespace LZ.Async {
+	
+	public static class Extensions {
+		
+		public static IDisposable RegisterDisposable(this CancellationToken cancellationToken, IDisposable disposable) {
+			return cancellationToken.Register(() => disposable?.Dispose());
+		}
 
-	public static class Extensions
-	{
-		/// <summary>
-		/// Retries an async operation until it is successful or the number of attempts exceed a given count.
-		/// </summary>
-		/// <param name="attemptCount">Number of tries before giving up.</param>
-		/// <param name="delay">A delay given between retries.</param>
-		public static async Task RetryAsync(this Func<Task> todo, uint attemptCount, TimeSpan delay, CancellationToken cancellationToken)
-		{
-			if (todo == null) throw new ArgumentNullException("todo");
-			if (attemptCount == 0) throw new ArgumentOutOfRangeException("attemptCount", "Needs to be at least one.");
-
-			int attempt = 0;
-			bool willRetry;
-			while (attempt < attemptCount)
-			{
-				if (cancellationToken.IsCancellationRequested) break;
-
-				try
-				{
-					willRetry = false;
-					await todo();
-					break;
+		public static IDisposable RegisterAsyncAction(this CancellationToken cancellationToken, IAsyncInfo asyncAction) {
+			return cancellationToken.Register(() => {
+				if (asyncAction != null && asyncAction.Status == AsyncStatus.Started) {
+					asyncAction.Cancel();
 				}
-				catch
-				{
-					willRetry = true;
-				}
-				finally
-				{
-					attempt++;
-				}
+			});
+		}
 
-				if (willRetry)
-				{
-					try
-					{
-						await Task.Delay(delay, cancellationToken);
-					}
-					catch (TaskCanceledException)
-					{
-						// break from loop if task was cancelled
-						break;
-					}
-				}
+		public static async Task InvokeAsync(this EventHandler<IDeferralProvider> ev, object sender, CancellationToken cancellationToken) {
+			if (ev != null) {
+				var args = new TaskCompletionEventArgs(cancellationToken);
+				ev.Invoke(sender, args);
+				
+				await args.AwaitAll();
 			}
 		}
 
-		/// <summary>
-		/// Retries an async operation until it is successful or the number of attempts exceed a given count.
-		/// </summary>
-		/// <param name="attemptCount">Number of tries before giving up.</param>
-		/// <param name="delay">A delay given between retries.</param>
-		public static Task RetryAsync(this Func<Task> todo, uint attemptCount, TimeSpan delay)
-		{
-			return RetryAsync(todo, attemptCount, delay, CancellationToken.None);
+		public static async Task InvokeAsync(this IAsyncAction asyncAction, CancellationToken cancellationToken) {
+			cancellationToken.ThrowIfCancellationRequested();
+
+			using (var reg = cancellationToken.RegisterAsyncAction(asyncAction)) {
+				await asyncAction;
+			}
 		}
 
-		public static Task<T> GetAsync<T>(this AsyncMethod<T> method)
-		{
-			return GetAsync(method, CancellationToken.None);
+		public static async Task<TResult> InvokeAsync<TResult>(this IAsyncOperation<TResult> asyncOp, CancellationToken cancellationToken) {
+			cancellationToken.ThrowIfCancellationRequested();
+
+			using (var reg = cancellationToken.RegisterAsyncAction(asyncOp)) {
+				return await asyncOp;
+			}
 		}
 
-		public static Task<T> GetAsync<T>(this AsyncMethod<T> method, CancellationToken cancellationToken)
-		{
-			if (method == null) throw new NullReferenceException();
+		public static async Task InvokeAsync<TProgress>(this IAsyncActionWithProgress<TProgress> asyncAction, IProgress<TProgress> progress, CancellationToken cancellationToken) {
+			cancellationToken.ThrowIfCancellationRequested();
 
-			var completion = new TaskCompletionSource<T>();
-
-			var cancel = method(completion.SetResult, completion.SetException);
-
-			cancellationToken.Register(cancel);
-			cancellationToken.Register(completion.SetCanceled);
-
-			return completion.Task;
+			using (var reg = cancellationToken.RegisterAsyncAction(asyncAction)) {
+				asyncAction.Progress = (s, p) => progress.Report(p);
+				await asyncAction;
+			}
 		}
 
-		public static Task<T> InvokeAsync<T>(this EventHandler<ITaskCompletionEventArgs<T>> @delegate, object sender)
-		{
-			// As events can be null if there are no subscribers, we should gracefully ignore this case.
-			if (@delegate == null) return Task.FromResult<T>(default(T));
+		public static async Task<TResult> InvokeAsync<TResult, TProgress>(this IAsyncOperationWithProgress<TResult, TProgress> asyncOp, IProgress<TProgress> progress, CancellationToken cancellationToken) {
+			cancellationToken.ThrowIfCancellationRequested();
 
-			var tcs = new TaskCompletionSource<T>();
-			@delegate(sender, new TaskCompletionEventArgs<T>(tcs));
-			return tcs.Task;
-		}
-
-		public static Task InvokeAsync(this EventHandler<ITaskCompletionEventArgs> @delegate, object sender)
-		{
-			// As events can be null if there are no subscribers, we should gracefully ignore this case.
-			if (@delegate == null) return Task.FromResult<object>(null);
-
-			var tcs = new TaskCompletionSource<object>();
-			@delegate(sender, new TaskCompletionEventArgs(tcs));
-			return tcs.Task;
+			using (var reg = cancellationToken.RegisterAsyncAction(asyncOp)) {
+				asyncOp.Progress = (s, p) => progress.Report(p);
+				return await asyncOp;
+			}
 		}
 	}
 }

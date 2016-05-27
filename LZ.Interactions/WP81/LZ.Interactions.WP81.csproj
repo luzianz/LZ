@@ -100,6 +100,10 @@
       <Project>{30b3d604-b11d-466a-b2af-0105484e6897}</Project>
       <Name>LZ.Interactivity.WP81</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\LZ\Portable\LZ.csproj">
+      <Project>{d61a9773-8e2e-470c-8d91-3760e9aec8bc}</Project>
+      <Name>LZ</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />

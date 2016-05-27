@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E57B26BF-AA35-4AF5-9625-6B379AD5EFB3}</ProjectGuid>
@@ -13,8 +13,8 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile344</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile151</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <SccProjectName>
     </SccProjectName>
     <SccLocalPath>
@@ -49,26 +49,35 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Async\IDeferralProvider.cs" />
+    <Compile Include="ComponentModel\ICopyable.cs" />
+    <Compile Include="ComponentModel\IImportable.cs" />
+    <Compile Include="ComponentModel\IPropertyChangeTracking.cs" />
     <Compile Include="EventHandling\IEventArgs.cs" />
-    <Compile Include="EventHandling\ITaskCompletionEventArgs.cs" />
+    <Compile Include="Async\IDeferral.cs" />
     <Compile Include="Async\IAsyncResource.cs" />
-    <Compile Include="Async\ICancellableAsyncResource.cs" />
-    <Compile Include="IBox.cs" />
-    <Compile Include="IClonable.cs" />
+    <Compile Include="ITransaction.cs" />
+    <Compile Include="IValueContainer.cs" />
+    <Compile Include="ComponentModel\ICancellable.cs" />
+    <Compile Include="ComponentModel\IExportable.cs" />
     <Compile Include="IConverter.cs" />
-    <Compile Include="ICopyable.cs" />
-    <Compile Include="ICreator.cs" />
+    <Compile Include="IObjectCreator.cs" />
     <Compile Include="IInitializer.cs" />
-    <Compile Include="IKeyedReader.cs" />
-    <Compile Include="IKeyedRemovable.cs" />
-    <Compile Include="IKeyedWriter.cs" />
-    <Compile Include="ILoadable.cs" />
-    <Compile Include="IPersistence.cs" />
-    <Compile Include="ISavable.cs" />
-    <Compile Include="ISerializable.cs" />
+    <Compile Include="Collections\IKeyedReader.cs" />
+    <Compile Include="Collections\IKeyedRemovable.cs" />
+    <Compile Include="Collections\IKeyedWriter.cs" />
+    <Compile Include="ComponentModel\ILoadable.cs" />
+    <Compile Include="ComponentModel\ISavable.cs" />
+    <Compile Include="ComponentModel\ISerializable.cs" />
+    <Compile Include="Net\IConnection.cs" />
+    <Compile Include="Net\IListener.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\ICredential.cs" />
     <Compile Include="State\IStateMachine.cs" />
+    <Compile Include="Streams\IAsyncLineReader.cs" />
+    <Compile Include="Streams\IAsyncLineWriter.cs" />
+    <Compile Include="Streams\IAsyncReader.cs" />
+    <Compile Include="Streams\IAsyncWriter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

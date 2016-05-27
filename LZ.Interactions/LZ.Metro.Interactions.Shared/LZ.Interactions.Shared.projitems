@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)InvokeCommandAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)KeyDownTrigger.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)LoadRelayBehavior.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NavigateBackAction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NavigateByInputBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NavigatorBehavior.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SelectionBindingBehavior.cs" />

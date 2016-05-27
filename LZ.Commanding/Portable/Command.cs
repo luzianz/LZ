@@ -3,49 +3,40 @@ using System;
 using System.ComponentModel;
 using System.Windows.Input;
 
-namespace LZ.Commanding
-{
-	public class Command : ICommand, IDisposable
-	{
-		#region Fields
+namespace LZ.Commanding {
 
-		private event Action UnsubscribePropertyChanges;
+	public class Command : CompositeDisposableBase, ICommand {
 
+		#region Methods
+		
+		public void RaiseCanExecuteChanged() {
+			if (IsDisposed) throw new ObjectDisposedException(nameof(Command));
+
+			CanExecuteChanged.Invoke(this);
+		}
+
+		protected void ObservePropertyChanges(INotifyPropertyChanged source, params string[] propertyNames) {
+			if (IsDisposed) throw new ObjectDisposedException(nameof(Command));
+			if (source == null) throw new ArgumentNullException(nameof(source));
+
+			var observePropertiesSubscription = source.ObservePropertyChanges(_ => RaiseCanExecuteChanged(), propertyNames);
+			AddDisposable(observePropertiesSubscription);
+		}
+		
 		#endregion
-
-        public void RaiseCanExecuteChanged()
-		{
-			CanExecuteChanged.RaiseEvent(this);
-		}
-
-		protected void ObservePropertyChanges(INotifyPropertyChanged observed, params string[] propertyNames)
-		{
-			if (observed == null) throw new ArgumentNullException("observed");
-
-			UnsubscribePropertyChanges += observed.ObservePropertyChanges(_ => RaiseCanExecuteChanged(), propertyNames);
-		}
 
 		#region ICommand
 
-		public virtual bool CanExecute(object parameter)
-		{
+		public virtual bool CanExecute(object parameter) {
+			if (IsDisposed) throw new ObjectDisposedException(nameof(Command));
+
 			return true;
 		}
 
 		public event EventHandler CanExecuteChanged;
 
-		public virtual void Execute(object parameter) { }
-
-		#endregion
-
-		#region IDisposable
-
-		public virtual void Dispose()
-		{
-			if (UnsubscribePropertyChanges != null)
-			{
-				UnsubscribePropertyChanges();
-			}
+		public virtual void Execute(object parameter) {
+			if (IsDisposed) throw new ObjectDisposedException(nameof(Command));
 		}
 
 		#endregion

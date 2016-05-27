@@ -1,10 +1,10 @@
-﻿namespace LZ.EventHandling
-{
+﻿namespace LZ.EventHandling {
+
 	/// <summary>
 	/// Generic event arguments
 	/// </summary>
-	public interface IEventArgs<T>
-	{
+	public interface IEventArgs<T> {
+
 		T Args { get; }
 	}
 }

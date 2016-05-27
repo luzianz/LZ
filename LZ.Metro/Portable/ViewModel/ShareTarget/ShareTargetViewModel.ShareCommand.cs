@@ -3,13 +3,15 @@ using LZ.Commanding;
 using LZ.EventHandling;
 using System;
 using System.Threading.Tasks;
+using LZ.Async;
+using System.Threading;
 
-namespace LZ.Metro.ViewModel
-{
-	public partial class ShareTargetViewModel
-	{
-		private class ShareCommand : AsyncCommand
-		{
+namespace LZ.Metro.ViewModel {
+
+	public partial class ShareTargetViewModel {
+
+		private class ShareCommand : AsyncCommand {
+
 			#region Fields
 
 			private IShareCommandContext context;
@@ -18,8 +20,7 @@ namespace LZ.Metro.ViewModel
 
 			#region Constructor
 
-			public ShareCommand(IShareCommandContext context)
-			{
+			public ShareCommand(IShareCommandContext context) {
 				this.context = context;
 			}
 
@@ -27,21 +28,20 @@ namespace LZ.Metro.ViewModel
 
 			#region AsyncCommand
 
-			protected override async Task ExecuteAsync(object parameter)
-			{
+			protected override async Task ExecuteAsync(object parameter, CancellationToken cancellationToken) {
 				context.ShareOperation.ReportStarted();
-				var tcs = new TaskCompletionSource<object>();
 
-				context.RaiseSharing(new TaskCompletionEventArgs(tcs));
+				var args = new TaskCompletionEventArgs(cancellationToken);
+				
+				try {
+					context.RaiseSharing(args);
 
-				try
-				{
-					await tcs.Task;
+					await args.AwaitAll();
+
 					context.ShareOperation.ReportCompleted();
-				}
-				catch (Exception ex)
-				{
-					context.ShareOperation.ReportError(ex.Message);
+				} catch (Exception) {
+					//context.ShareOperation.ReportError(ex.Message);
+					context.ShareOperation.ReportError("unknown error");
 				}
 			}
 

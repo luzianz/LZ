@@ -1,21 +1,20 @@
 ﻿using System;
 
-namespace LZ.EventHandling
-{
-	public class EventArgs<T> : EventArgs, IEventArgs<T>
-	{
+namespace LZ.EventHandling {
+
+	public class EventArgs<T> : EventArgs, IEventArgs<T> {
+
 		#region Constructor
 
-		public EventArgs(T args)
-		{
-			this.Args = args;
+		public EventArgs(T args) {
+			Args = args;
 		}
 
 		#endregion
 
 		#region IEventArgs<T>
 
-		public T Args { get; private set; }
+		public T Args { get; }
 
 		#endregion
 	}

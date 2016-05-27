@@ -1,7 +1,7 @@
-﻿namespace LZ.Security
-{
-	public interface ICredential
-	{
+﻿namespace LZ.Security {
+
+	public interface ICredential {
+
 		/// <summary>
 		/// Represents identity.
 		/// </summary>
