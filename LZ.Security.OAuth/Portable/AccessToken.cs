@@ -1,12 +1,4 @@
-﻿namespace LZ.Security.OAuth
-{
-	internal struct AccessToken : ICredential
-	{
-		#region Properties
+﻿namespace LZ.Security.OAuth {
 
-		public string Key { get; set; }
-		public string Secret { get; set; }
-
-		#endregion
-	}
+	public class AccessToken : Token { }
 }

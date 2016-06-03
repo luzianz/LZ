@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Linq;
+using LZ.Format.Conversion;
 
-namespace LZ.Security.OAuth
-{
-	using Format.Conversion;
+namespace LZ.Security.OAuth {
+	
+	internal static class ParameterValues {
 
-	internal static class ParameterValues
-	{
 		#region Constants
 
 		public const string OAuthVersion1 = "1.0";
@@ -14,13 +13,11 @@ namespace LZ.Security.OAuth
 
 		#endregion
 
-		public static string GenerateNonce()
-		{
+		public static string GenerateNonce() {
 			return Guid.NewGuid().ToByteArray().Select(b => (char)b).ToHexadecimal(true);
 		}
 
-		public static string GetTimestamp()
-		{
+		public static string GetTimestamp() {
 			return DateTime.UtcNow.ToTimestamp().ToString();
 		}
 	}

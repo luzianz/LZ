@@ -12,7 +12,7 @@ namespace LZ.Net {
 
 		#region Fields
 
-		private StreamSocket socket;
+		private readonly StreamSocket socket;
 
 		#endregion
 
@@ -28,11 +28,11 @@ namespace LZ.Net {
 
 		public async Task ConnectAsync(string hostName, int port, CancellationToken cancellationToken) {
 			if (IsDisposed) throw new ObjectDisposedException(nameof(SocketConnection));
-
+			
 			var asyncAction = socket.ConnectAsync(new HostName(hostName), port.ToString());
-			cancellationToken.RegisterAsyncAction(asyncAction);
-
-			await asyncAction;
+			using (var reg = cancellationToken.RegisterAsyncAction(asyncAction)) {
+				await asyncAction;
+			}
 		}
 
 		#endregion

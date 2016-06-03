@@ -1,17 +1,13 @@
-﻿namespace LZ.Security.OAuth
-{
-	public struct ConsumerCredentials : ICredential
-	{
-		private string _Key;
-		private string _Secret;
+﻿namespace LZ.Security.OAuth {
 
-		public ConsumerCredentials(string key, string secret)
-		{
-			_Key = key;
-			_Secret = secret;
+	public struct ConsumerCredentials : ICredential {
+
+		public ConsumerCredentials(string key, string secret) {
+			Key = key;
+			Secret = secret;
 		}
 
-		public string Key { get { return _Key; } }
-		public string Secret { get { return _Secret; } }
+		public string Key { get; }
+		public string Secret { get; }
 	}
 }

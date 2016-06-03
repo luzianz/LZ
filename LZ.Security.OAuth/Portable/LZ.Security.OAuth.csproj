@@ -54,25 +54,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccessToken.cs" />
+    <Compile Include="ApiExtensions\Twitter\Statuses\home_timeline.cs" />
+    <Compile Include="ApiExtensions\Twitter\Statuses\mentions_timeline.cs" />
+    <Compile Include="ApiExtensions\Twitter\Statuses\StatusExtensions.cs" />
+    <Compile Include="ApiExtensions\Twitter\Statuses\user_timeline.cs" />
+    <Compile Include="AuthorizationResult.cs" />
     <Compile Include="AuthorizationToken.cs" />
     <Compile Include="Authorizer.cs" />
     <Compile Include="ConsumerCredentials.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="Endpoints\TumblrEndpoints.cs" />
+    <Compile Include="Endpoints\TwitterEndpoints.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="Extensions.OAuth.Crypto.cs" />
-    <Compile Include="Extensions.OAuth.cs" />
-    <Compile Include="Extensions.OAuth.Format.cs" />
+    <Compile Include="Format.cs" />
+    <Compile Include="HttpExtensions.cs" />
     <Compile Include="ParameterNames.cs" />
     <Compile Include="ParameterValues.cs" />
     <Compile Include="Parser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestToken.cs" />
-    <Compile Include="Uris\Tumblr.cs" />
+    <Compile Include="Token.cs" />
     <Compile Include="WebAuthenticationBroker.cs" />
   </ItemGroup>
   <ItemGroup>
     <TargetPlatform Include="Windows, Version=8.1" />
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

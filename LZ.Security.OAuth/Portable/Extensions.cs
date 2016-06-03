@@ -1,86 +1,88 @@
 ﻿using System;
-using System.Threading.Tasks;
-using Windows.Web.Http;
-using Windows.Web.Http.Headers;
+using System.Collections.Generic;
+using System.Text;
+using LZ.Format.Web;
+using LZ.Strings;
 
-namespace LZ.Security.OAuth
-{
-	public static partial class Extensions
-    {
-		internal async static Task<RequestToken> ObtainRequestTokenAsync(
-			this HttpClient httpClient, 
-			Uri requestUri, 
-			Uri callbackUri, 
-			HttpMethod httpMethod, 
-			ICredential consumerCredentials)
-		{
-			var httpRequest = new HttpRequestMessage(httpMethod, requestUri);
-			string oauthHeader = OAuth.GenerateOAuthHeader(
-				httpMethod: httpMethod,
-				requestUrl: requestUri,
-				consumerKey: consumerCredentials.Key,
-				consumerSecret: consumerCredentials.Secret,
-				callbackUrl: callbackUri);
+namespace LZ.Security.OAuth {
+	public static partial class Extensions {
 
-            httpRequest.Headers.Authorization = new HttpCredentialsHeaderValue("OAuth", oauthHeader);
+		private static void AddOAuthParameters(
+			this Dictionary<string, string> parameters,
+			string consumerKey,
+			Uri callbackUrl = null,
+			string token = null,
+			string verifier = null) {
 
-			HttpResponseMessage response = await httpClient.SendRequestAsync(httpRequest);
-			string responseString = await response.Content.ReadAsStringAsync();
+			parameters.Add(ParameterNames.ConsumerKey, consumerKey);
+			parameters.Add(ParameterNames.Version, ParameterValues.OAuthVersion1);
+			parameters.Add(ParameterNames.SignatureMethod, ParameterValues.HMAC_SHA1);
+			parameters.Add(ParameterNames.Nonce, ParameterValues.GenerateNonce());
+			parameters.Add(ParameterNames.Timestamp, ParameterValues.GetTimestamp());
 
-            RequestToken requestToken;
-            Parser.ParseQuery(responseString, out requestToken);
-            
-			return requestToken;
+			#region Optional
+
+			if (callbackUrl != null) {
+				parameters.Add(ParameterNames.Callback, callbackUrl.ToString());
+			}
+			if (token != null) {
+				parameters.Add(ParameterNames.Token, token);
+			}
+			if (verifier != null) {
+				parameters.Add(ParameterNames.Verifier, verifier);
+			}
+
+			#endregion
 		}
 
-		internal async static Task<AccessToken> ObtainAccessTokenAsync(
-			this HttpClient httpClient, 
-			Uri requestUri, 
-			HttpMethod httpMethod, 
-			ICredential consumerCredentials, 
-			AuthorizationToken authorizationToken, 
-			RequestToken requestToken)
-		{
-			var httpRequest = new HttpRequestMessage(httpMethod, requestUri);
-			string oauthHeader = OAuth.GenerateOAuthHeader(
-				httpMethod: httpMethod,
-				requestUrl: requestUri,
-				consumerKey: consumerCredentials.Key,
-				consumerSecret: consumerCredentials.Secret,
-				token: authorizationToken.Token,
-				tokenSecret: requestToken.Secret,
-				verifier: authorizationToken.Verifier);
+		private static string GetSignatureBaseString(
+			this IEnumerable<KeyValuePair<string, string>> parameters,
+			string httpMethod,
+			Uri requestUrl) {
 
-			httpRequest.Headers.Authorization = new HttpCredentialsHeaderValue("OAuth", oauthHeader);
+			string urlEncodedParams = parameters.ToEncodedQueryString(sort: true);
 
-			HttpResponseMessage response = await httpClient.SendRequestAsync(httpRequest);
-			string responseString = await response.Content.ReadAsStringAsync();
+			var signatureBaseString = new StringBuilder();   // note that this is a StringBuilder, not a string. You need to call .ToString() for the string.
+			signatureBaseString.Append(httpMethod);   // you would never need to percent-encoded this since it is only letters
+			signatureBaseString.Append('&');
+			signatureBaseString.Append(requestUrl.ToNormalizedString().PercentEncode());
+			signatureBaseString.Append('&');
+			signatureBaseString.Append(urlEncodedParams.PercentEncode());
 
-			AccessToken accessToken;
-			Parser.ParseQuery(responseString, out accessToken);
+			return signatureBaseString.ToString();
+		}
 
-			return accessToken;
-        }
+		private static void Sign(
+			this Dictionary<string, string> parameters,
+			string signatureBaseString,
+			string consumerSecret,
+			string tokenSecret = null) {
 
-		public async static Task<HttpResponseMessage> AccessResourceAsync(
-			this HttpClient httpClient,
-			Uri resourceUri,
-			HttpMethod httpMethod,
-			ICredential consumerCredentials,
-			ICredential accessToken)
-		{
-			var httpRequest = new HttpRequestMessage(httpMethod, resourceUri);
-			string oauthHeader = OAuth.GenerateOAuthHeader(
-				httpMethod: httpMethod,
-				requestUrl: resourceUri,
-				consumerKey: consumerCredentials.Key,
-				consumerSecret: consumerCredentials.Secret,
-				token: accessToken.Key,
-				tokenSecret: accessToken.Secret);
+			string signingKey = Format.GetSigningKey(consumerSecret, tokenSecret ?? string.Empty);
+			string signature = Crypto.GenerateSignature(signingKey, signatureBaseString.ToString());
+			parameters.Add(ParameterNames.Signature, signature);
+		}
 
-			httpRequest.Headers.Authorization = new HttpCredentialsHeaderValue("OAuth", oauthHeader);
+		public static string GenerateOAuthHeader(
+			this Dictionary<string, string> parameters,
+			string httpMethod,
+			string consumerKey,
+			string consumerSecret,
+			Uri requestUrl,
+			Uri callbackUrl = null,
+			string token = null,
+			string tokenSecret = null,
+			string verifier = null) {
 
-			return await httpClient.SendRequestAsync(httpRequest);
+			parameters.AddOAuthParameters(consumerKey, callbackUrl, token, verifier);
+
+			string urlEncodedParams = parameters.ToEncodedQueryString(sort: true);
+
+			var signatureBaseString = parameters.GetSignatureBaseString(httpMethod, requestUrl);
+
+			parameters.Sign(signatureBaseString, consumerSecret, tokenSecret);
+
+			return parameters.JoinToString(", ", p => $"{p.Key}=\"{p.Value.PercentEncode()}\"");
 		}
 	}
 }

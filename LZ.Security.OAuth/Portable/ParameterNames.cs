@@ -1,7 +1,7 @@
-﻿namespace LZ.Security.OAuth
-{
-	internal static class ParameterNames
-	{
+﻿namespace LZ.Security.OAuth {
+
+	internal static class ParameterNames {
+
 		#region Constants
 
 		public const string ConsumerKey = "oauth_consumer_key";
