@@ -3,8 +3,7 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 	</PropertyGroup>
 	<ItemGroup>
-		<Compile Remove="Portable\**" />
-		<EmbeddedResource Remove="Portable\**" />
-		<None Remove="Portable\**" />
+		<ProjectReference Include="..\LZ.Interfaces\LZ.Interfaces.csproj" />
+		<ProjectReference Include="..\LZ\LZ.csproj" />
 	</ItemGroup>
 </Project>
