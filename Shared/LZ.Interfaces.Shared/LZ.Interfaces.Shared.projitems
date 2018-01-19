@@ -9,5 +9,33 @@
     <Import_RootNamespace>LZ.Interfaces.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IAsyncResource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IDeferral.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\IDeferralProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\IKeyedReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\IKeyedRemovable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\IKeyedWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\ICancellable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\ICopyable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\IExportable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\IImportable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\ILoadable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\ISavable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\ISerializable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventHandling\IEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IInitializer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IObjectCreator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ITransaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IValueContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\IConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\IListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Security\ICredential.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Security\OAuth\IOAuthEndpoints.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)State\IStateMachine.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Streams\IAsyncLineReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Streams\IAsyncLineWriter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Streams\IAsyncReader.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Streams\IAsyncWriter.cs" />
   </ItemGroup>
 </Project>
