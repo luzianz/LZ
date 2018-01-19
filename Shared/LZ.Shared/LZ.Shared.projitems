@@ -9,5 +9,39 @@
     <Import_RootNamespace>LZ.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Async\AsyncLazy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\RetryAsyncBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\TaskCompletionDeferral.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Async\TaskCompletionEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\CollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\DictionaryWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Collections\WeakCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\EditableObjectBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositeDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositeDisposableBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CompositeException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Converter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefaultConstructorObjectCreator.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DelegateDisposable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DisposableBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventHandling\EventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventHandling\EventHandlingExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Format\Conversion\ConversionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Format\Web\QueryParameterComparer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Format\Web\WebExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Net\TcpClientConnection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NotifyingValueContainer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reactive\DelegateObserver.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reactive\Observable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reactive\ObservableBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reactive\ReactiveExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reactive\Subject.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reactive\WeakSubscriptionObservable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Streams\StreamExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Strings\StringExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\DelegateTransaction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Transactions\TransactionBase.cs" />
   </ItemGroup>
 </Project>

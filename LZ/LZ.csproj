@@ -14,4 +14,6 @@
 		<TargetFramework>netstandard2.0</TargetFramework>
 	</PropertyGroup>
 
+	<Import Project="..\Shared\LZ.Shared\LZ.Shared.projitems" Label="Shared" />
+
 </Project>
