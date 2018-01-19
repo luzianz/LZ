@@ -7,4 +7,8 @@
 		<EmbeddedResource Remove="Portable\**" />
 		<None Remove="Portable\**" />
 	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\LZ.Interfaces\LZ.Interfaces.csproj" />
+	  <ProjectReference Include="..\LZ\LZ.csproj" />
+	</ItemGroup>
 </Project>
