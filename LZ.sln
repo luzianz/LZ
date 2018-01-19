@@ -10,7 +10,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZ.State", "LZ.State\LZ.Sta
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZ.Commanding", "LZ.Commanding\LZ.Commanding.csproj", "{BB112C45-9A86-4680-BB7E-6546E7285700}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Interfaces.Shared", "Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.shproj", "{194B391F-BF8A-4796-8E18-FE7EA3BAB75B}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{194b391f-bf8a-4796-8e18-fe7ea3bab75b}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|x64 = Debug|x64
