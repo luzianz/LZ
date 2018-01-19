@@ -192,3 +192,5 @@ ModelManifest.xml
 
 # Uncategorized/Uncertain
 .vs/
+project.lock.json
+
