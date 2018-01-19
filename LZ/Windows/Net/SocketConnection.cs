@@ -6,7 +6,7 @@ using Windows.Networking.Sockets;
 using LZ.Streams;
 using LZ.Async;
 
-namespace LZ.Net {
+namespace LZ.Windows.Net {
 
 	public class SocketConnection : DisposableBase, IConnection {
 

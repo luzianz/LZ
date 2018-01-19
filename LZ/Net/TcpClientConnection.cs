@@ -1,10 +1,8 @@
-﻿#if !NETFX_CORE
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
-using Streams;
 
-namespace Net {
+namespace LZ.Net {
 	public class TcpClientConnection : IConnection {
 
 		private readonly TcpClient tcpClient;
@@ -26,7 +24,7 @@ namespace Net {
 		}
 
 		public async Task<uint> ReadAsync(byte[] bytes, uint count, CancellationToken cancellationToken) {
-			return await tcpClient.GetStream().ReadAsync(bytes, count, cancellationToken);
+			return (uint)await tcpClient.GetStream().ReadAsync(bytes, 0, (int)count, cancellationToken);
 		}
 
 		public async Task WriteAsync(byte[] bytes, uint count, CancellationToken cancellationToken) {
@@ -34,4 +32,3 @@ namespace Net {
 		}
 	}
 }
-#endif

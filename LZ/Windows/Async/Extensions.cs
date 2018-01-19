@@ -1,16 +1,9 @@
-﻿using LZ.EventHandling;
-using System;
+﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Windows.Foundation;
 
-namespace LZ.Async {
-	
+namespace LZ.Windows.Async {
 	public static class Extensions {
-		
-		public static IDisposable RegisterDisposable(this CancellationToken cancellationToken, IDisposable disposable) {
-			return cancellationToken.Register(() => disposable?.Dispose());
-		}
 
 		public static IDisposable RegisterAsyncAction(this CancellationToken cancellationToken, IAsyncInfo asyncAction) {
 			return cancellationToken.Register(() => {
@@ -18,15 +11,6 @@ namespace LZ.Async {
 					asyncAction.Cancel();
 				}
 			});
-		}
-
-		public static async Task InvokeAsync(this EventHandler<IDeferralProvider> ev, object sender, CancellationToken cancellationToken) {
-			if (ev != null) {
-				var args = new TaskCompletionEventArgs(cancellationToken);
-				ev.Invoke(sender, args);
-				
-				await args.AwaitAll();
-			}
 		}
 
 		public static async Task InvokeAsync(this IAsyncAction asyncAction, CancellationToken cancellationToken) {

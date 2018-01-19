@@ -3,13 +3,7 @@
 namespace LZ.Transactions {
 
 	public abstract class TransactionBase : DisposableBase, ITransaction {
-
-		#region Fields
-
-		private Action rollBack;
-
-		#endregion
-
+		
 		#region Properties
 
 		public bool IsCommitted { get; private set; } = false;
