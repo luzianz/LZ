@@ -31,7 +31,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Format\Conversion\ConversionExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Format\Web\QueryParameterComparer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Format\Web\WebExtensions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Net\TcpClientConnection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NotifyingValueContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Reactive\DelegateObserver.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Reactive\Observable.cs" />
@@ -43,5 +42,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Strings\StringExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Transactions\DelegateTransaction.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Transactions\TransactionBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Net\" />
   </ItemGroup>
 </Project>
