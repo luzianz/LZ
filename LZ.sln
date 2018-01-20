@@ -22,13 +22,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZ.Net", "LZ.Net\LZ.Net.csp
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Extras.Shared", "Shared\LZ.Extras.Shared\LZ.Extras.Shared.shproj", "{7FA1769A-F189-417F-A302-B1519E015544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Extras", "LZ.Extras\LZ.Extras.csproj", "{07C95C29-5771-4CFB-86CC-0F174F14C9BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZ.Extras", "LZ.Extras\LZ.Extras.csproj", "{07C95C29-5771-4CFB-86CC-0F174F14C9BA}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Security.OAuth.Shared", "Shared\LZ.Security.OAuth.Shared\LZ.Security.OAuth.Shared.shproj", "{89FEE45E-51A3-49BB-B864-0DCA6E50E75E}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{194b391f-bf8a-4796-8e18-fe7ea3bab75b}*SharedItemsImports = 13
 		Shared\LZ.Extras.Shared\LZ.Extras.Shared.projitems*{7fa1769a-f189-417f-a302-b1519e015544}*SharedItemsImports = 13
 		Shared\LZ.Shared\LZ.Shared.projitems*{83298439-9d8b-4887-8985-dae259661ba7}*SharedItemsImports = 13
+		Shared\LZ.Security.OAuth.Shared\LZ.Security.OAuth.Shared.projitems*{89fee45e-51a3-49bb-b864-0dca6e50e75e}*SharedItemsImports = 13
 		Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems*{dfa42b3c-fd6a-4e19-8851-86497f5413a6}*SharedItemsImports = 13
 		Shared\LZ.Net.Shared\LZ.Net.Shared.projitems*{e7523ee1-081a-4e93-a46f-362f917613e7}*SharedItemsImports = 13
 	EndGlobalSection
