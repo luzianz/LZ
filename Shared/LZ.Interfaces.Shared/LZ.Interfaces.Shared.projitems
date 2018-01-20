@@ -6,7 +6,7 @@
     <SharedGUID>194b391f-bf8a-4796-8e18-fe7ea3bab75b</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>LZ.Interfaces.Shared</Import_RootNamespace>
+    <Import_RootNamespace>LZ.Interfaces</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Async\IAsyncResource.cs" />

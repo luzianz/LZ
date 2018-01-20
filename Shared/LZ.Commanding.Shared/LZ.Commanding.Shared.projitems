@@ -6,7 +6,7 @@
     <SharedGUID>dfa42b3c-fd6a-4e19-8851-86497f5413a6</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>LZ.Commanding.Shared</Import_RootNamespace>
+    <Import_RootNamespace>LZ.Commanding</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)AsyncCommand.cs" />

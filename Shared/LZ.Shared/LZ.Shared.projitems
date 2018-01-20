@@ -6,7 +6,7 @@
 		<SharedGUID>83298439-9d8b-4887-8985-dae259661ba7</SharedGUID>
 	</PropertyGroup>
 	<PropertyGroup Label="Configuration">
-		<Import_RootNamespace>LZ.Shared</Import_RootNamespace>
+		<Import_RootNamespace>LZ</Import_RootNamespace>
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include="$(MSBuildThisFileDirectory)Async\AsyncLazy.cs" />

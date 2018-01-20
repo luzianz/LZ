@@ -6,7 +6,7 @@
     <SharedGUID>e7523ee1-081a-4e93-a46f-362f917613e7</SharedGUID>
   </PropertyGroup>
   <PropertyGroup Label="Configuration">
-    <Import_RootNamespace>LZ.Net.Shared</Import_RootNamespace>
+    <Import_RootNamespace>LZ.Net</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)TcpClientConnection.cs" />
