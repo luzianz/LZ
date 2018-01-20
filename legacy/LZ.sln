@@ -15,6 +15,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Commanding.Shared", "..\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Commanding", "LZ.Commanding\LZ.Commanding.csproj", "{B9916A40-0A7A-413D-AEBB-2BDB14A65DB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Windows", "LZ.Windows\LZ.Windows.csproj", "{6AB5EC4B-0270-4288-9BB6-001F734250B7}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{194b391f-bf8a-4796-8e18-fe7ea3bab75b}*SharedItemsImports = 13
@@ -41,6 +43,10 @@ Global
 		{B9916A40-0A7A-413D-AEBB-2BDB14A65DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9916A40-0A7A-413D-AEBB-2BDB14A65DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9916A40-0A7A-413D-AEBB-2BDB14A65DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AB5EC4B-0270-4288-9BB6-001F734250B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AB5EC4B-0270-4288-9BB6-001F734250B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AB5EC4B-0270-4288-9BB6-001F734250B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AB5EC4B-0270-4288-9BB6-001F734250B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
