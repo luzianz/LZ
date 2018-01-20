@@ -9,5 +9,6 @@
     <Import_RootNamespace>LZ.Extras.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)EditableObjectBase.cs" />
   </ItemGroup>
 </Project>
