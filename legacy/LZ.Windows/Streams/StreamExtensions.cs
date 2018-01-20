@@ -1,11 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using LZ.Windows.Async;
+using System;
 using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using LZ.Async;
-using LZ.Strings;
 using Windows.Storage.Streams;
 
 namespace LZ.Windows.Streams {
