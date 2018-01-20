@@ -38,7 +38,7 @@ namespace LZ.Security.OAuth {
 		}
 	}
 }
-#else
+#elif (NETSTANDARD1_3 || NETSTANDARD1_4 || NETSTANDARD1_5 || NETSTANDARD1_6 || NETSTANDARD2_0)
 using System;
 using System.Threading.Tasks;
 
