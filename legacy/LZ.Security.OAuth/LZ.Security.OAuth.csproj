@@ -39,41 +39,6 @@
 		<WarningLevel>4</WarningLevel>
 	</PropertyGroup>
 	<ItemGroup>
-		<!-- A reference to the entire .NET Framework is automatically included -->
-		<ProjectReference Include="..\..\LZ.Interfaces\Portable\LZ.Interfaces.csproj">
-			<Project>{e57b26bf-aa35-4af5-9625-6b379ad5efb3}</Project>
-			<Name>LZ.Interfaces</Name>
-		</ProjectReference>
-		<ProjectReference Include="..\..\LZ\Portable\LZ.csproj">
-			<Project>{d61a9773-8e2e-470c-8d91-3760e9aec8bc}</Project>
-			<Name>LZ</Name>
-		</ProjectReference>
-	</ItemGroup>
-	<ItemGroup>
-		<Compile Include="AccessToken.cs" />
-		<Compile Include="ApiExtensions\Twitter\Statuses\home_timeline.cs" />
-		<Compile Include="ApiExtensions\Twitter\Statuses\mentions_timeline.cs" />
-		<Compile Include="ApiExtensions\Twitter\Statuses\StatusExtensions.cs" />
-		<Compile Include="ApiExtensions\Twitter\Statuses\user_timeline.cs" />
-		<Compile Include="AuthorizationResult.cs" />
-		<Compile Include="AuthorizationToken.cs" />
-		<Compile Include="Authorizer.cs" />
-		<Compile Include="ConsumerCredentials.cs" />
-		<Compile Include="Crypto.cs" />
-		<Compile Include="Endpoints\TumblrEndpoints.cs" />
-		<Compile Include="Endpoints\TwitterEndpoints.cs" />
-		<Compile Include="Extensions.cs" />
-		<Compile Include="Format.cs" />
-		<Compile Include="HttpExtensions.cs" />
-		<Compile Include="ParameterNames.cs" />
-		<Compile Include="ParameterValues.cs" />
-		<Compile Include="Parser.cs" />
-		<Compile Include="Properties\AssemblyInfo.cs" />
-		<Compile Include="RequestToken.cs" />
-		<Compile Include="Token.cs" />
-		<Compile Include="WebAuthenticationBroker.cs" />
-	</ItemGroup>
-	<ItemGroup>
 		<TargetPlatform Include="Windows, Version=8.1" />
 		<TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
 	</ItemGroup>
