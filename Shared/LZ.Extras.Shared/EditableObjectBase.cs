@@ -1,8 +1,9 @@
-﻿using System.ComponentModel;
-
-namespace LZ.ComponentModel {
-
-	public abstract class EditableObjectBase : IEditableObject {
+﻿namespace LZ.ComponentModel {
+	public abstract class EditableObjectBase
+#if NETSTANDARD2_0
+		: System.ComponentModel.IEditableObject
+#endif
+	{
 
 		#region Fields
 
