@@ -1,6 +1,6 @@
 ﻿namespace LZ.ComponentModel {
 	public abstract class EditableObjectBase
-#if NETSTANDARD2_0
+#if (NETSTANDARD2_0 || IEDITABLEOBJECT)
 		: System.ComponentModel.IEditableObject
 #endif
 	{
