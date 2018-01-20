@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
+using Windows.Foundation;
 
 namespace LZ.Windows.Async {
 	public static class Extensions {
