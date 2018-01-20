@@ -11,4 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)EditableObjectBase.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ComponentModel\" />
+  </ItemGroup>
 </Project>
