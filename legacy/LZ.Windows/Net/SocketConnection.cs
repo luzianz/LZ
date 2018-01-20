@@ -1,10 +1,12 @@
-﻿using System;
+﻿using LZ.Net;
+using LZ.Streams;
+using LZ.Windows.Async;
+using LZ.Windows.Streams;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using Windows.Networking;
 using Windows.Networking.Sockets;
-using LZ.Streams;
-using LZ.Async;
 
 namespace LZ.Windows.Net {
 
