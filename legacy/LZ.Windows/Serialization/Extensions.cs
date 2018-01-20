@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LZ.Metro.Serialization {
+namespace LZ.Windows.Serialization {
 
 	public static class Extensions {
 

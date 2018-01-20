@@ -3,12 +3,12 @@ using System.ComponentModel;
 using System.Windows.Input;
 using LZ.Async;
 using LZ.EventHandling;
-using LZ.Metro.EventHandling;
+using LZ.Windows.EventHandling;
 using Windows.ApplicationModel.DataTransfer.ShareTarget;
 using Windows.Foundation;
 using Windows.UI.Xaml.Media;
 
-namespace LZ.Metro.ViewModel {
+namespace LZ.Windows.ViewModel {
 
 	public partial class ShareTargetViewModel : INotifyPropertyChanged, ILoadCommandContext, IShareCommandContext {
 

@@ -1,7 +1,7 @@
 ﻿using LZ.Async;
 using Windows.ApplicationModel.DataTransfer.ShareTarget;
 
-namespace LZ.Metro.ViewModel {
+namespace LZ.Windows.ViewModel {
 
 	/// <summary>
 	/// Provides context for ShareCommand.

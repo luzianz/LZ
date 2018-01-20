@@ -1,7 +1,7 @@
 ﻿using LZ.Collections;
 using Windows.Storage;
 
-namespace LZ.Metro.Serialization {
+namespace LZ.Windows.Serialization {
 
 	public class ApplicationDataContainerReader : IKeyedReader<string, object> {
 

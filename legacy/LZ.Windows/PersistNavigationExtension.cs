@@ -2,9 +2,9 @@
 using System;
 using Windows.UI.Xaml.Controls;
 using LZ.Async;
-using LZ.Metro.Serialization;
+using LZ.Windows.Serialization;
 
-namespace LZ.Metro {
+namespace LZ.Windows {
 
 	public class PersistNavigationExtension {
 

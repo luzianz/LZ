@@ -3,7 +3,7 @@ using System.ComponentModel;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 
-namespace LZ.Metro.ViewModel
+namespace LZ.Windows.ViewModel
 {
 	public class WindowViewModel : INotifyPropertyChanged
 	{

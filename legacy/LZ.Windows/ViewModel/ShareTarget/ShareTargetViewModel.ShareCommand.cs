@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using LZ.Async;
 using System.Threading;
 
-namespace LZ.Metro.ViewModel {
+namespace LZ.Windows.ViewModel {
 
 	public partial class ShareTargetViewModel {
 

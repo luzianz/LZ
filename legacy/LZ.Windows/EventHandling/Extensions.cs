@@ -1,6 +1,6 @@
 ﻿using Windows.Foundation;
 
-namespace LZ.Metro.EventHandling {
+namespace LZ.Windows.EventHandling {
 
 	public static class Extensions {
 

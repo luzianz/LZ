@@ -1,9 +1,9 @@
-﻿using LZ.Metro.Serialization;
+﻿using LZ.Windows.Serialization;
 using System.Threading.Tasks;
 using Windows.Storage;
 using System;
 
-namespace LZ.Metro {
+namespace LZ.Windows {
 
 	public class LocalSettingsPersistence : IPersistence {
 

@@ -2,11 +2,11 @@
 using System;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using LZ.Metro.Serialization;
+using LZ.Windows.Serialization;
 using LZ.Async;
 using LZ.ComponentModel;
 
-namespace LZ.Metro {
+namespace LZ.Windows {
 
 	/// <summary>
 	/// Injects functionality to persist page state.

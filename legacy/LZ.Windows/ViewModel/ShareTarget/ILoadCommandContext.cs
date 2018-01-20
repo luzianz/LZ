@@ -1,7 +1,7 @@
 ﻿using Windows.ApplicationModel.DataTransfer.ShareTarget;
 using Windows.UI.Xaml.Media;
 
-namespace LZ.Metro.ViewModel
+namespace LZ.Windows.ViewModel
 {
 	/// <summary>
 	/// Provides context for LoadCommand.

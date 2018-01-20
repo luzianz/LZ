@@ -5,7 +5,7 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Threading;
 
-namespace LZ.Metro.ViewModel {
+namespace LZ.Windows.ViewModel {
 
 	public partial class ShareTargetViewModel {
 

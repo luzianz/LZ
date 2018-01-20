@@ -1,11 +1,12 @@
 ﻿using LZ.Async;
+using LZ.Windows.Async;
 using System;
 using System.Threading.Tasks;
 using Windows.Storage;
 using System.Threading;
 using Windows.Foundation;
 
-namespace LZ.Metro {
+namespace LZ.Windows {
 
 	/// <summary>
 	/// Provides a <see cref="Windows.Storage.IStorageFile"/> asynchronously given a folder and file name.
