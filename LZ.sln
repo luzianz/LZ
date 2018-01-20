@@ -16,11 +16,16 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Shared", "Shared\LZ.Shar
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Commanding.Shared", "Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.shproj", "{DFA42B3C-FD6A-4E19-8851-86497F5413A6}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Net.Shared", "Shared\LZ.Net.Shared\LZ.Net.Shared.shproj", "{E7523EE1-081A-4E93-A46F-362F917613E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Net", "LZ.Net\LZ.Net.csproj", "{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{194b391f-bf8a-4796-8e18-fe7ea3bab75b}*SharedItemsImports = 13
 		Shared\LZ.Shared\LZ.Shared.projitems*{83298439-9d8b-4887-8985-dae259661ba7}*SharedItemsImports = 13
 		Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems*{dfa42b3c-fd6a-4e19-8851-86497f5413a6}*SharedItemsImports = 13
+		Shared\LZ.Net.Shared\LZ.Net.Shared.projitems*{e7523ee1-081a-4e93-a46f-362f917613e7}*SharedItemsImports = 13
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -79,6 +84,18 @@ Global
 		{BB112C45-9A86-4680-BB7E-6546E7285700}.Release|x64.Build.0 = Release|Any CPU
 		{BB112C45-9A86-4680-BB7E-6546E7285700}.Release|x86.ActiveCfg = Release|Any CPU
 		{BB112C45-9A86-4680-BB7E-6546E7285700}.Release|x86.Build.0 = Release|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Debug|x64.Build.0 = Debug|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Debug|x86.Build.0 = Debug|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|x64.ActiveCfg = Release|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|x64.Build.0 = Release|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

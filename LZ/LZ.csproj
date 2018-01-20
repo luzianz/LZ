@@ -11,7 +11,7 @@
 	</ItemGroup>
 
 	<PropertyGroup>
-		<TargetFramework>netstandard2.0</TargetFramework>
+		<TargetFramework>netstandard1.0</TargetFramework>
 	</PropertyGroup>
 
 	<Import Project="..\Shared\LZ.Shared\LZ.Shared.projitems" Label="Shared" />

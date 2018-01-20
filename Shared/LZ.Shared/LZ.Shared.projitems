@@ -17,7 +17,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Collections\CollectionExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collections\DictionaryWrapper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Collections\WeakCollection.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ComponentModel\EditableObjectBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CompositeDisposable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CompositeDisposableBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CompositeException.cs" />
@@ -44,6 +43,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Transactions\TransactionBase.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ComponentModel\" />
     <Folder Include="$(MSBuildThisFileDirectory)Net\" />
   </ItemGroup>
 </Project>
