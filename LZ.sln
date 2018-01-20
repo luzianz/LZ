@@ -22,6 +22,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZ.Net", "LZ.Net\LZ.Net.csp
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Extras.Shared", "Shared\LZ.Extras.Shared\LZ.Extras.Shared.shproj", "{7FA1769A-F189-417F-A302-B1519E015544}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Extras", "LZ.Extras\LZ.Extras.csproj", "{07C95C29-5771-4CFB-86CC-0F174F14C9BA}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{194b391f-bf8a-4796-8e18-fe7ea3bab75b}*SharedItemsImports = 13
@@ -99,6 +101,18 @@ Global
 		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|x64.Build.0 = Release|Any CPU
 		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|x86.ActiveCfg = Release|Any CPU
 		{6A7B80DA-FA23-4144-A10A-F0CD5D40E0B7}.Release|x86.Build.0 = Release|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Debug|x64.Build.0 = Debug|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Debug|x86.Build.0 = Debug|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Release|x64.ActiveCfg = Release|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Release|x64.Build.0 = Release|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Release|x86.ActiveCfg = Release|Any CPU
+		{07C95C29-5771-4CFB-86CC-0F174F14C9BA}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
