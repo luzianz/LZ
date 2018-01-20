@@ -19,10 +19,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Windows", "LZ.Windows\LZ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Extras", "LZ.Extras\LZ.Extras.csproj", "{EF844E93-A4DC-4CDB-9CBB-7348ECD90A07}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Extras.Shared", "..\Shared\LZ.Extras.Shared\LZ.Extras.Shared.shproj", "{7FA1769A-F189-417F-A302-B1519E015544}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{194b391f-bf8a-4796-8e18-fe7ea3bab75b}*SharedItemsImports = 13
 		..\Shared\LZ.Shared\LZ.Shared.projitems*{6a11448b-74b2-4321-902e-57790b90234f}*SharedItemsImports = 4
+		..\Shared\LZ.Extras.Shared\LZ.Extras.Shared.projitems*{7fa1769a-f189-417f-a302-b1519e015544}*SharedItemsImports = 13
 		..\Shared\LZ.Shared\LZ.Shared.projitems*{83298439-9d8b-4887-8985-dae259661ba7}*SharedItemsImports = 13
 		..\Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{a8fef9c4-7f95-49d7-ad0a-e5b7ed00a6de}*SharedItemsImports = 4
 		..\Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems*{b9916a40-0a7a-413d-aebb-2bdb14a65db5}*SharedItemsImports = 4
