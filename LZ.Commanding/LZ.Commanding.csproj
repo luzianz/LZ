@@ -6,4 +6,5 @@
 		<ProjectReference Include="..\LZ.Interfaces\LZ.Interfaces.csproj" />
 		<ProjectReference Include="..\LZ\LZ.csproj" />
 	</ItemGroup>
+	<Import Project="..\Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems" Label="Shared" />
 </Project>
