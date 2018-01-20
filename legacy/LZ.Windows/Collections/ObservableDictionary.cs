@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Windows.Foundation.Collections;
 
-namespace LZ.Collections {
+namespace LZ.Windows.Collections {
 
 	public class ObservableDictionary<K, V> : IObservableMap<K, V> {
 		
