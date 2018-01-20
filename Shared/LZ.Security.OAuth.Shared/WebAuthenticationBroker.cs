@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if (WIN81 || WPA81)
+using System;
 using System.Threading.Tasks;
 using WA = Windows.Security.Authentication.Web;
 
@@ -37,3 +38,25 @@ namespace LZ.Security.OAuth {
 		}
 	}
 }
+#else
+using System;
+using System.Threading.Tasks;
+
+namespace LZ.Security.OAuth {
+
+	//TODO: implement
+	internal static class WebAuthenticationBroker {
+		public static Task<AuthorizationToken> AuthenticateAsync(Uri requestUri) {
+			throw new NotImplementedException();
+		}
+
+		public static Task<AuthorizationToken> AuthenticateAsync(Uri requestUri, Uri callbackUri) {
+			throw new NotImplementedException();
+		}
+
+		public static Uri GetCurrentApplicationCallbackUri() {
+			throw new NotImplementedException();
+		}
+	}
+}
+#endif

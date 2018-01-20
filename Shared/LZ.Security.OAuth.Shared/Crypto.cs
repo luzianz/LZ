@@ -1,4 +1,5 @@
-﻿using Windows.Security.Cryptography;
+﻿#if (WIN81 || WPA81)
+using Windows.Security.Cryptography;
 using Windows.Security.Cryptography.Core;
 using Windows.Storage.Streams;
 
@@ -18,3 +19,18 @@ namespace LZ.Security.OAuth {
 		}
 	}
 }
+#elif (NETSTANDARD1_3 || NETSTANDARD1_4 || NETSTANDARD1_5 || NETSTANDARD1_6 || NETSTANDARD2_0)
+using System;
+
+namespace LZ.Security.OAuth {
+
+	internal static class Crypto {
+		
+		//TODO: Implement
+		public static string GenerateSignature(string signingKey, string signatureBaseString) {
+			//System.Security.Cryptography
+			throw new NotImplementedException();
+		}
+	}
+}
+#endif
