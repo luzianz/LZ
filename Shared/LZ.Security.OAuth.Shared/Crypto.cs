@@ -20,16 +20,22 @@ namespace LZ.Security.OAuth {
 	}
 }
 #elif (NETSTANDARD1_3 || NETSTANDARD1_4 || NETSTANDARD1_5 || NETSTANDARD1_6 || NETSTANDARD2_0)
-using System;
+using System.Security.Cryptography;
+using System.Text;
+using static System.Convert;
 
 namespace LZ.Security.OAuth {
 
 	internal static class Crypto {
 		
-		//TODO: Implement
 		public static string GenerateSignature(string signingKey, string signatureBaseString) {
-			//System.Security.Cryptography
-			throw new NotImplementedException();
+
+			var signingKeyBytes = Encoding.UTF8.GetBytes(signingKey);
+			var parameterBytes = Encoding.UTF8.GetBytes(signatureBaseString);
+			using (var hasher = new HMACSHA1(signingKeyBytes)) {
+				var signatureBytes = hasher.ComputeHash(parameterBytes);
+				return ToBase64String(signatureBytes);
+			}
 		}
 	}
 }
