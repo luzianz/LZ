@@ -2,22 +2,20 @@
 using System;
 using Windows.UI.Xaml;
 
-namespace LZ.Interactivity
-{
-	public class Behavior : FrameworkElement, IBehavior
-	{
+namespace LZ.Interactivity {
+
+	public class Behavior : FrameworkElement, IBehavior {
+
 		#region IBehavior
 
 		public DependencyObject AssociatedObject { get; private set; }
 
-		public void Attach(DependencyObject associatedObject)
-		{
+		public void Attach(DependencyObject associatedObject) {
 			OnAttaching(associatedObject);
 			OnAttached();
 		}
 
-		public void Detach()
-		{
+		public void Detach() {
 			OnDetaching();
 		}
 
@@ -25,8 +23,7 @@ namespace LZ.Interactivity
 
 		#region Virtual
 
-		protected virtual void OnAttaching(DependencyObject associatedObject)
-		{
+		protected virtual void OnAttaching(DependencyObject associatedObject) {
 			this.AssociatedObject = associatedObject;
 		}
 

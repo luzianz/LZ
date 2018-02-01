@@ -109,6 +109,7 @@
   </PropertyGroup>
   <Import Project="..\LZ.Interactivity.Shared\LZ.Interactivity.Shared.projitems" Label="Shared" Condition="Exists('..\LZ.Interactivity.Shared\LZ.Interactivity.Shared.projitems')" />
   <Import Project="..\LZ.Metro.Interactivity.Shared\LZ.Interactivity.Shared.projitems" Label="Shared" Condition="Exists('..\LZ.Metro.Interactivity.Shared\LZ.Interactivity.Shared.projitems')" />
+  <Import Project="..\LZ.Windows.Interactivity.Shared\LZ.Windows.Interactivity.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
