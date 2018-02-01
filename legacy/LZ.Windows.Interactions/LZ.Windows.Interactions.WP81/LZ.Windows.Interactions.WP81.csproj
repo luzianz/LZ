@@ -87,31 +87,30 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <ProjectReference Include="..\..\LZ.Commanding\Portable\LZ.Commanding.csproj">
-      <Project>{acbf33a7-aa4f-4877-acd7-2656156cbd51}</Project>
-      <Name>LZ.Commanding</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\LZ.Interfaces\Portable\LZ.Interfaces.csproj">
-      <Project>{e57b26bf-aa35-4af5-9625-6b379ad5efb3}</Project>
-      <Name>LZ.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\LZ.Interactivity\WP81\LZ.Interactivity.WP81.csproj">
-      <Project>{30b3d604-b11d-466a-b2af-0105484e6897}</Project>
-      <Name>LZ.Interactivity.WP81</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\LZ\Portable\LZ.csproj">
-      <Project>{d61a9773-8e2e-470c-8d91-3760e9aec8bc}</Project>
-      <Name>LZ</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <SDKReference Include="BehaviorsXamlSDKManaged, Version=12.0">
       <Name>Behaviors SDK %28XAML%29</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\LZ.Commanding\LZ.Commanding.csproj">
+      <Project>{b9916a40-0a7a-413d-aebb-2bdb14a65db5}</Project>
+      <Name>LZ.Commanding</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LZ.Interfaces\LZ.Interfaces.csproj">
+      <Project>{a8fef9c4-7f95-49d7-ad0a-e5b7ed00a6de}</Project>
+      <Name>LZ.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LZ.Windows.Interactivity\LZ.Windows.Interactivity.WP81\LZ.Windows.Interactivity.WP81.csproj">
+      <Project>{30b3d604-b11d-466a-b2af-0105484e6897}</Project>
+      <Name>LZ.Windows.Interactivity.WP81</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LZ\LZ.csproj">
+      <Project>{6a11448b-74b2-4321-902e-57790b90234f}</Project>
+      <Name>LZ</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
