@@ -30,7 +30,7 @@ namespace LZ.Security.OAuth {
 				httpMethod: HttpMethod.Post,
 				consumerCredentials: consumerCredentials);
 
-			string fullAuthorizeUrlStr = string.Format("{0}?oauth_token={1}", authorizeUrl, requestToken.Key);
+			string fullAuthorizeUrlStr = $"{authorizeUrl}?oauth_token={requestToken.Key}";
 
 			var authorizationToken = await WebAuthenticationBroker.AuthenticateAsync(
 				new Uri(fullAuthorizeUrlStr),
