@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Windows.Interactions.Win
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Windows.Interactions.WP81", "LZ.Windows.Interactions\LZ.Windows.Interactions.WP81\LZ.Windows.Interactions.WP81.csproj", "{03B7B4C9-F982-480B-8C92-0EED122DA6B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Security.OAuth.Abstraction", "LZ.Security.OAuth.Abstraction\LZ.Security.OAuth.Abstraction.csproj", "{DBE23650-8806-4035-8646-D4AB883A68C5}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		..\Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{194b391f-bf8a-4796-8e18-fe7ea3bab75b}*SharedItemsImports = 13
@@ -204,6 +206,22 @@ Global
 		{03B7B4C9-F982-480B-8C92-0EED122DA6B6}.Release|x64.Build.0 = Release|Any CPU
 		{03B7B4C9-F982-480B-8C92-0EED122DA6B6}.Release|x86.ActiveCfg = Release|x86
 		{03B7B4C9-F982-480B-8C92-0EED122DA6B6}.Release|x86.Build.0 = Release|x86
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Debug|ARM.Build.0 = Debug|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Debug|x64.Build.0 = Debug|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Debug|x86.Build.0 = Debug|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Release|ARM.ActiveCfg = Release|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Release|ARM.Build.0 = Release|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Release|x64.ActiveCfg = Release|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Release|x64.Build.0 = Release|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Release|x86.ActiveCfg = Release|Any CPU
+		{DBE23650-8806-4035-8646-D4AB883A68C5}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
