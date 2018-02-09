@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Format.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HttpExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IWebAuthenticationBroker.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ParameterNames.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ParameterValues.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Parser.cs" />
