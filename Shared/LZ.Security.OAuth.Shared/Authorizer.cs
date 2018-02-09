@@ -9,20 +9,22 @@ namespace LZ.Security.OAuth {
 		#region Fields
 
 		private readonly ICredential consumerCredentials;
+		private readonly IWebAuthenticationBroker authenticationBroker;
 
 		#endregion
 
 		#region Constructor
 
-		public Authorizer(ICredential consumerCredentials) {
+		public Authorizer(ICredential consumerCredentials, IWebAuthenticationBroker authenticationBroker) {
 			this.consumerCredentials = consumerCredentials;
+			this.authenticationBroker = authenticationBroker;
 		}
 
 		#endregion
 
 		public async Task<ICredential> AuthorizeAsync(string requestTokenUrl, string authorizeUrl, string accessTokenUrl) {
 			var client = new HttpClient();
-			Uri callback = WebAuthenticationBroker.GetCurrentApplicationCallbackUri();
+			Uri callback = authenticationBroker.GetCurrentApplicationCallbackUri();
 
 			var requestToken = await client.ObtainRequestTokenAsync(
 				requestUri: new Uri(requestTokenUrl),
@@ -32,7 +34,7 @@ namespace LZ.Security.OAuth {
 
 			string fullAuthorizeUrlStr = $"{authorizeUrl}?oauth_token={requestToken.Key}";
 
-			var authorizationToken = await WebAuthenticationBroker.AuthenticateAsync(
+			var authorizationToken = await authenticationBroker.AuthenticateAsync(
 				new Uri(fullAuthorizeUrlStr),
 				callback);
 
