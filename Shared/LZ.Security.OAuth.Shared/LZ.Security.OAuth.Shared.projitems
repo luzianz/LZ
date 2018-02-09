@@ -30,6 +30,5 @@
     <Compile Include="$(MSBuildThisFileDirectory)Parser.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RequestToken.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Token.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)WebAuthenticationBroker.cs" />
   </ItemGroup>
 </Project>
