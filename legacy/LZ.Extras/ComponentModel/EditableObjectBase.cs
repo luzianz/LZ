@@ -1,9 +1,6 @@
 ﻿namespace LZ.ComponentModel {
-	public abstract class EditableObjectBase
-#if (NETSTANDARD2_0 || IEDITABLEOBJECT)
-		: System.ComponentModel.IEditableObject
-#endif
-	{
+
+	public abstract class EditableObjectBase : System.ComponentModel.IEditableObject {
 
 		#region Fields
 

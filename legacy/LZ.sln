@@ -7,15 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Interfaces", "LZ.Interfa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ", "LZ\LZ.csproj", "{6A11448B-74B2-4321-902E-57790B90234F}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Commanding.Shared", "..\Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.shproj", "{DFA42B3C-FD6A-4E19-8851-86497F5413A6}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Commanding", "LZ.Commanding\LZ.Commanding.csproj", "{B9916A40-0A7A-413D-AEBB-2BDB14A65DB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Windows", "LZ.Windows\LZ.Windows.csproj", "{6AB5EC4B-0270-4288-9BB6-001F734250B7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Extras", "LZ.Extras\LZ.Extras.csproj", "{EF844E93-A4DC-4CDB-9CBB-7348ECD90A07}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Extras.Shared", "..\Shared\LZ.Extras.Shared\LZ.Extras.Shared.shproj", "{7FA1769A-F189-417F-A302-B1519E015544}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Windows.Interactivity.Shared", "LZ.Windows.Interactivity\LZ.Windows.Interactivity.Shared\LZ.Windows.Interactivity.Shared.shproj", "{3BAF7036-C7F6-4F97-A02E-BFEAF51E6D1F}"
 EndProject
@@ -35,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Security.OAuth", "LZ.Sec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Windows.Security.Cryptography", "LZ.Windows.Security.Cryptography\LZ.Windows.Security.Cryptography.csproj", "{2D6AFE9D-B212-4AAB-9CFF-050C2E3610B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.State", "LZ.State\LZ.State.csproj", "{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		LZ.Windows.Interactivity\LZ.Windows.Interactivity.Shared\LZ.Windows.Interactivity.Shared.projitems*{30b3d604-b11d-466a-b2af-0105484e6897}*SharedItemsImports = 4
@@ -42,10 +40,6 @@ Global
 		LZ.Windows.Interactions\LZ.Windows.Interactions.Shared\LZ.Windows.Interactions.Shared.projitems*{4361d5c0-7f47-4f48-bea8-8bfdd11bc2fd}*SharedItemsImports = 13
 		LZ.Windows.Interactions\LZ.Windows.Interactions.Shared\LZ.Windows.Interactions.Shared.projitems*{44634b3a-81b0-4a83-92b6-f60973737a44}*SharedItemsImports = 4
 		LZ.Windows.Interactivity\LZ.Windows.Interactivity.Shared\LZ.Windows.Interactivity.Shared.projitems*{62ac18ca-9192-4555-b03b-421a7590bd15}*SharedItemsImports = 4
-		..\Shared\LZ.Extras.Shared\LZ.Extras.Shared.projitems*{7fa1769a-f189-417f-a302-b1519e015544}*SharedItemsImports = 13
-		..\Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems*{b9916a40-0a7a-413d-aebb-2bdb14a65db5}*SharedItemsImports = 4
-		..\Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems*{dfa42b3c-fd6a-4e19-8851-86497f5413a6}*SharedItemsImports = 13
-		..\Shared\LZ.Extras.Shared\LZ.Extras.Shared.projitems*{ef844e93-a4dc-4cdb-9cbb-7348ecd90a07}*SharedItemsImports = 4
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -250,6 +244,22 @@ Global
 		{2D6AFE9D-B212-4AAB-9CFF-050C2E3610B8}.Release|x64.Build.0 = Release|Any CPU
 		{2D6AFE9D-B212-4AAB-9CFF-050C2E3610B8}.Release|x86.ActiveCfg = Release|Any CPU
 		{2D6AFE9D-B212-4AAB-9CFF-050C2E3610B8}.Release|x86.Build.0 = Release|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Debug|ARM.Build.0 = Debug|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Debug|x64.Build.0 = Debug|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Debug|x86.Build.0 = Debug|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Release|ARM.ActiveCfg = Release|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Release|ARM.Build.0 = Release|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Release|x64.ActiveCfg = Release|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Release|x64.Build.0 = Release|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Release|x86.ActiveCfg = Release|Any CPU
+		{89F1AF08-2FFA-4F73-A454-EB8CA627EAB7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

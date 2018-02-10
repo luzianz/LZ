@@ -4,8 +4,6 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
-  <Import Project="..\Shared\LZ.Net.Shared\LZ.Net.Shared.projitems" Label="Shared" />
-
   <ItemGroup>
     <ProjectReference Include="..\legacy\LZ.Interfaces\LZ.Interfaces.csproj" />
   </ItemGroup>

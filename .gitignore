@@ -130,6 +130,7 @@ publish/
 
 # NuGet Packages Directory
 packages/*
+legacy/packages/*
 ## TODO: If the tool you use requires repositories.config
 ## uncomment the next line
 #!packages/repositories.config
@@ -139,6 +140,7 @@ packages/*
 # This line needs to be after the ignore of the build folder
 # (and the packages folder if the line above has been uncommented)
 !packages/build/
+!legacy/packages/build/
 
 # Windows Azure Build Output
 csx/
@@ -193,5 +195,3 @@ ModelManifest.xml
 # Uncategorized/Uncertain
 .vs/
 project.lock.json
-
-/legacy/packages
