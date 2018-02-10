@@ -1,50 +1,89 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" 
-	xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-	<PropertyGroup>
-		<MinimumVisualStudioVersion>12.0</MinimumVisualStudioVersion>
-		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-		<ProjectGuid>{E7127543-639F-4688-BF29-FDAFFFCC43F9}</ProjectGuid>
-		<OutputType>Library</OutputType>
-		<AppDesignerFolder>Properties</AppDesignerFolder>
-		<RootNamespace>LZ.Security.OAuth</RootNamespace>
-		<AssemblyName>LZ.Security.OAuth</AssemblyName>
-		<DefaultLanguage>en-US</DefaultLanguage>
-		<FileAlignment>512</FileAlignment>
-		<ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-		<TargetFrameworkProfile>Profile32</TargetFrameworkProfile>
-		<TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-		<SccProjectName></SccProjectName>
-		<SccLocalPath></SccLocalPath>
-		<SccAuxPath></SccAuxPath>
-		<SccProvider></SccProvider>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-		<DebugSymbols>true</DebugSymbols>
-		<DebugType>full</DebugType>
-		<Optimize>false</Optimize>
-		<OutputPath>bin\Debug\</OutputPath>
-		<DefineConstants>DEBUG;TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-		<DebugType>pdbonly</DebugType>
-		<Optimize>true</Optimize>
-		<OutputPath>bin\Release\</OutputPath>
-		<DefineConstants>TRACE</DefineConstants>
-		<ErrorReport>prompt</ErrorReport>
-		<WarningLevel>4</WarningLevel>
-	</PropertyGroup>
-	<ItemGroup>
-		<TargetPlatform Include="Windows, Version=8.1" />
-		<TargetPlatform Include="WindowsPhoneApp, Version=8.1" />
-	</ItemGroup>
-	<ItemGroup />
-	<Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-	<!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E7127543-639F-4688-BF29-FDAFFFCC43F9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LZ.Security.OAuth</RootNamespace>
+    <AssemblyName>LZ.Security.OAuth</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ApiExtensions\Twitter\Statuses\home_timeline.cs" />
+    <Compile Include="ApiExtensions\Twitter\Statuses\mentions_timeline.cs" />
+    <Compile Include="ApiExtensions\Twitter\Statuses\StatusExtensions.cs" />
+    <Compile Include="ApiExtensions\Twitter\Statuses\user_timeline.cs" />
+    <Compile Include="AuthorizationResult.cs" />
+    <Compile Include="Authorizer.cs" />
+    <Compile Include="Crypto.cs" />
+    <Compile Include="Endpoints\TumblrEndpoints.cs" />
+    <Compile Include="Endpoints\TwitterEndpoints.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Format.cs" />
+    <Compile Include="HttpExtensions.cs" />
+    <Compile Include="ParameterNames.cs" />
+    <Compile Include="ParameterValues.cs" />
+    <Compile Include="Parser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LZ.Interfaces\LZ.Interfaces.csproj">
+      <Project>{a8fef9c4-7f95-49d7-ad0a-e5b7ed00a6de}</Project>
+      <Name>LZ.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LZ.Security.OAuth.Abstraction\LZ.Security.OAuth.Abstraction.csproj">
+      <Project>{dbe23650-8806-4035-8646-d4ab883a68c5}</Project>
+      <Name>LZ.Security.OAuth.Abstraction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LZ\LZ.csproj">
+      <Project>{6a11448b-74b2-4321-902e-57790b90234f}</Project>
+      <Name>LZ</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\netstandard1.0\CommonServiceLocator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
 			 Other similar extension points exist, see Microsoft.Common.targets.
 	<Target Name="BeforeBuild"></Target><Target Name="AfterBuild"></Target>
 	-->

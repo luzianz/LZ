@@ -194,3 +194,4 @@ ModelManifest.xml
 .vs/
 project.lock.json
 
+/legacy/packages

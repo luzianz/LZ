@@ -1,7 +1,7 @@
-﻿using LZ.Security;
+﻿using LZ.Net;
+using LZ.Security;
 using LZ.Security.OAuth;
 using System.Collections.Generic;
-using System.Net.Http;
 using System.Threading.Tasks;
 
 namespace LZ.ApiExtensions.Twitter.Statuses {
@@ -24,8 +24,8 @@ namespace LZ.ApiExtensions.Twitter.Statuses {
 		/// <param name="contributor_details">This parameter enhances the contributors element of the status response to include the screen_name of the contributor. By default only the user_id of the contributor is included</param>
 		/// <param name="include_rts">When set to false, the timeline will strip any native retweets (though they will still count toward both the maximal length of the timeline and the slice selected by the count parameter). Note: If you’re using the trim_user parameter in conjunction with include_rts, the retweets will still contain a full user object</param>
 		/// <remarks>https://dev.twitter.com/rest/reference/get/statuses/user_timeline</remarks>
-		public static Task<HttpResponseMessage> GetUserTimelineAsync(
-			this HttpClient client,
+		public static Task<IHttpResponse> GetUserTimelineAsync(
+			this IHttpClient client,
 			ICredential consumerCredential,
 			ICredential accessToken,
 			int? user_id = null,

@@ -1,7 +1,6 @@
-﻿using System;
+﻿using LZ.Net;
+using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace LZ.Security.OAuth {
@@ -9,41 +8,40 @@ namespace LZ.Security.OAuth {
 	public static partial class HttpExtensions {
 
 		internal async static Task<RequestToken> ObtainRequestTokenAsync(
-			this HttpClient httpClient,
+			this IHttpClient httpClient,
 			Uri requestUri,
 			Uri callbackUri,
 			HttpMethod httpMethod,
 			ICredential consumerCredentials) {
-			var httpRequest = new HttpRequestMessage(httpMethod, requestUri);
-			var parameters = new Dictionary<string, string>();
 
-			string oauthHeader = parameters.GenerateOAuthHeader(
-				httpMethod.Method,
+			var parameters = new Dictionary<string, string>();
+			string oauthHeaderValue = parameters.GenerateOAuthHeader(
+				httpMethod.ToString(),
 				consumerCredentials.Key,
 				consumerCredentials.Secret,
 				requestUri,
 				callbackUri);
 
-			httpRequest.Headers.Authorization = new AuthenticationHeaderValue("OAuth", oauthHeader);
+			var headers = new List<KeyValuePair<string, IEnumerable<string>>>();
+			headers.AddOauthAuthorizationHeader(oauthHeaderValue);
 
-			HttpResponseMessage response = await httpClient.SendAsync(httpRequest);
-			string responseString = await response.Content.ReadAsStringAsync();
-
-			return ParseRequestToken(responseString);
+			using (var response = await httpClient.SendAsync(requestUri, httpMethod, headers)) {
+				string responseString = await response.GetStringContentAsync();
+				return ParseRequestToken(responseString);
+			}
 		}
 
 		internal async static Task<AccessToken> ObtainAccessTokenAsync(
-			this HttpClient httpClient,
+			this IHttpClient httpClient,
 			Uri requestUri,
 			HttpMethod httpMethod,
 			ICredential consumerCredentials,
 			AuthorizationToken authorizationToken,
 			RequestToken requestToken) {
-			var httpRequest = new HttpRequestMessage(httpMethod, requestUri);
+			
 			var parameters = new Dictionary<string, string>();
-
-			string oauthHeader = parameters.GenerateOAuthHeader(
-				httpMethod.Method,
+			string oauthHeaderValue = parameters.GenerateOAuthHeader(
+				httpMethod.ToString(),
 				consumerCredentials.Key,
 				consumerCredentials.Secret,
 				requestUri,
@@ -51,33 +49,35 @@ namespace LZ.Security.OAuth {
 				tokenSecret: requestToken.Secret,
 				verifier: authorizationToken.Verifier);
 
-			httpRequest.Headers.Authorization = new AuthenticationHeaderValue("OAuth", oauthHeader);
+			var headers = new List<KeyValuePair<string, IEnumerable<string>>>();
+			headers.AddOauthAuthorizationHeader(oauthHeaderValue);
 
-			HttpResponseMessage response = await httpClient.SendAsync(httpRequest);
-			string responseString = await response.Content.ReadAsStringAsync();
-
-			return ParseAccessToken(responseString);
+			using (var response = await httpClient.SendAsync(requestUri, httpMethod, headers)) {
+				string responseString = await response.GetStringContentAsync();
+				return ParseAccessToken(responseString);
+			}
 		}
 
-		public async static Task<HttpResponseMessage> AccessResourceAsync(
-			this HttpClient httpClient,
+		public async static Task<IHttpResponse> AccessResourceAsync(
+			this IHttpClient httpClient,
 			Uri resourceUri,
 			HttpMethod httpMethod,
 			ICredential consumerCredentials,
 			ICredential accessToken,
 			Dictionary<string, string> parameters) {
-			var httpRequest = new HttpRequestMessage(httpMethod, resourceUri);
-			string oauthHeader = parameters.GenerateOAuthHeader(
-				httpMethod: httpMethod.Method,
+			
+			string oauthHeaderValue = parameters.GenerateOAuthHeader(
+				httpMethod: httpMethod.ToString(),
 				consumerKey: consumerCredentials.Key,
 				consumerSecret: consumerCredentials.Secret,
 				requestUrl: resourceUri,
 				token: accessToken.Key,
 				tokenSecret: accessToken.Secret);
 
-			httpRequest.Headers.Authorization = new AuthenticationHeaderValue("OAuth", oauthHeader);
+			var headers = new List<KeyValuePair<string, IEnumerable<string>>>();
+			headers.AddOauthAuthorizationHeader(oauthHeaderValue);
 
-			return await httpClient.SendAsync(httpRequest);
+			return await httpClient.SendAsync(resourceUri, httpMethod, headers);
 		}
 
 		private static AccessToken ParseAccessToken(string responseString) {
