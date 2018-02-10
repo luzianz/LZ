@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Interfaces", "LZ.Interfaces\LZ.Interfaces.csproj", "{A8FEF9C4-7F95-49D7-AD0A-E5B7ED00A6DE}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Interfaces.Shared", "..\Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.shproj", "{194B391F-BF8A-4796-8E18-FE7EA3BAB75B}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Shared", "..\Shared\LZ.Shared\LZ.Shared.shproj", "{83298439-9D8B-4887-8985-DAE259661BA7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ", "LZ\LZ.csproj", "{6A11448B-74B2-4321-902E-57790B90234F}"
@@ -37,7 +35,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Security.OAuth.Abstracti
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{194b391f-bf8a-4796-8e18-fe7ea3bab75b}*SharedItemsImports = 13
 		LZ.Windows.Interactivity\LZ.Windows.Interactivity.Shared\LZ.Windows.Interactivity.Shared.projitems*{30b3d604-b11d-466a-b2af-0105484e6897}*SharedItemsImports = 4
 		LZ.Windows.Interactivity\LZ.Windows.Interactivity.Shared\LZ.Windows.Interactivity.Shared.projitems*{3baf7036-c7f6-4f97-a02e-bfeaf51e6d1f}*SharedItemsImports = 13
 		LZ.Windows.Interactions\LZ.Windows.Interactions.Shared\LZ.Windows.Interactions.Shared.projitems*{4361d5c0-7f47-4f48-bea8-8bfdd11bc2fd}*SharedItemsImports = 13
@@ -46,7 +43,6 @@ Global
 		..\Shared\LZ.Shared\LZ.Shared.projitems*{6a11448b-74b2-4321-902e-57790b90234f}*SharedItemsImports = 4
 		..\Shared\LZ.Extras.Shared\LZ.Extras.Shared.projitems*{7fa1769a-f189-417f-a302-b1519e015544}*SharedItemsImports = 13
 		..\Shared\LZ.Shared\LZ.Shared.projitems*{83298439-9d8b-4887-8985-dae259661ba7}*SharedItemsImports = 13
-		..\Shared\LZ.Interfaces.Shared\LZ.Interfaces.Shared.projitems*{a8fef9c4-7f95-49d7-ad0a-e5b7ed00a6de}*SharedItemsImports = 4
 		..\Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems*{b9916a40-0a7a-413d-aebb-2bdb14a65db5}*SharedItemsImports = 4
 		..\Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems*{dfa42b3c-fd6a-4e19-8851-86497f5413a6}*SharedItemsImports = 13
 		..\Shared\LZ.Extras.Shared\LZ.Extras.Shared.projitems*{ef844e93-a4dc-4cdb-9cbb-7348ecd90a07}*SharedItemsImports = 4

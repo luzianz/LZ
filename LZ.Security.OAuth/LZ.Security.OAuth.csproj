@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\legacy\LZ.Security.OAuth.Abstraction\LZ.Security.OAuth.Abstraction.csproj" />
-    <ProjectReference Include="..\LZ.Interfaces\LZ.Interfaces.csproj" />
     <ProjectReference Include="..\LZ\LZ.csproj" />
   </ItemGroup>
 

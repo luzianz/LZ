@@ -7,7 +7,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\LZ.Interfaces\LZ.Interfaces.csproj" />
+	  <ProjectReference Include="..\legacy\LZ.Interfaces\LZ.Interfaces.csproj" />
 	</ItemGroup>
 
 	<PropertyGroup>
