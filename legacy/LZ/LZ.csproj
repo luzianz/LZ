@@ -41,12 +41,43 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Async\AsyncLazy.cs" />
+    <Compile Include="Async\Extensions.cs" />
+    <Compile Include="Async\RetryAsyncBase.cs" />
+    <Compile Include="Async\TaskCompletionDeferral.cs" />
+    <Compile Include="Async\TaskCompletionEventArgs.cs" />
+    <Compile Include="Collections\CollectionExtensions.cs" />
+    <Compile Include="Collections\DictionaryWrapper.cs" />
+    <Compile Include="Collections\WeakCollection.cs" />
+    <Compile Include="CompositeDisposable.cs" />
+    <Compile Include="CompositeDisposableBase.cs" />
+    <Compile Include="CompositeException.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="DefaultConstructorObjectCreator.cs" />
+    <Compile Include="DelegateDisposable.cs" />
+    <Compile Include="DisposableBase.cs" />
+    <Compile Include="EventHandling\EventArgs.cs" />
+    <Compile Include="EventHandling\EventHandlingExtensions.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Format\Conversion\ConversionExtensions.cs" />
+    <Compile Include="Format\Web\QueryParameterComparer.cs" />
+    <Compile Include="Format\Web\WebExtensions.cs" />
+    <Compile Include="NotifyingValueContainer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reactive\DelegateObserver.cs" />
+    <Compile Include="Reactive\Observable.cs" />
+    <Compile Include="Reactive\ObservableBase.cs" />
+    <Compile Include="Reactive\ReactiveExtensions.cs" />
+    <Compile Include="Reactive\Subject.cs" />
+    <Compile Include="Reactive\WeakSubscriptionObservable.cs" />
+    <Compile Include="Streams\StreamExtensions.cs" />
+    <Compile Include="Strings\StringExtensions.cs" />
+    <Compile Include="Transactions\DelegateTransaction.cs" />
+    <Compile Include="Transactions\TransactionBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="project.json" />
   </ItemGroup>
-  <Import Project="..\..\Shared\LZ.Shared\LZ.Shared.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

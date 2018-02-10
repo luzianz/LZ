@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>netstandard1.0</TargetFramework>
   </PropertyGroup>
 
   <Import Project="..\Shared\LZ.Security.OAuth.Shared\LZ.Security.OAuth.Shared.projitems" Label="Shared" />
 
   <ItemGroup>
     <ProjectReference Include="..\legacy\LZ.Security.OAuth.Abstraction\LZ.Security.OAuth.Abstraction.csproj" />
-    <ProjectReference Include="..\LZ\LZ.csproj" />
+    <ProjectReference Include="..\legacy\LZ\LZ.csproj" />
   </ItemGroup>
 
 </Project>

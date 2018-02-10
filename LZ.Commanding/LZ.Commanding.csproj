@@ -2,8 +2,8 @@
 	<PropertyGroup>
 		<TargetFramework>netstandard1.0</TargetFramework>
 	</PropertyGroup>
-	<ItemGroup>
-		<ProjectReference Include="..\LZ\LZ.csproj" />
-	</ItemGroup>
 	<Import Project="..\Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems" Label="Shared" />
+	<ItemGroup>
+	  <ProjectReference Include="..\legacy\LZ\LZ.csproj" />
+	</ItemGroup>
 </Project>

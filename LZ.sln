@@ -2,13 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZ", "LZ\LZ.csproj", "{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZ.State", "LZ.State\LZ.State.csproj", "{0D510C9C-31ED-4776-AFE7-870DCF3A64F4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LZ.Commanding", "LZ.Commanding\LZ.Commanding.csproj", "{BB112C45-9A86-4680-BB7E-6546E7285700}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Shared", "Shared\LZ.Shared\LZ.Shared.shproj", "{83298439-9D8B-4887-8985-DAE259661BA7}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "LZ.Commanding.Shared", "Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.shproj", "{DFA42B3C-FD6A-4E19-8851-86497F5413A6}"
 EndProject
@@ -28,10 +24,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Security.OAuth.Abstracti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ.Interfaces", "legacy\LZ.Interfaces\LZ.Interfaces.csproj", "{A8FEF9C4-7F95-49D7-AD0A-E5B7ED00A6DE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LZ", "legacy\LZ\LZ.csproj", "{6A11448B-74B2-4321-902E-57790B90234F}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Shared\LZ.Extras.Shared\LZ.Extras.Shared.projitems*{7fa1769a-f189-417f-a302-b1519e015544}*SharedItemsImports = 13
-		Shared\LZ.Shared\LZ.Shared.projitems*{83298439-9d8b-4887-8985-dae259661ba7}*SharedItemsImports = 13
 		Shared\LZ.Security.OAuth.Shared\LZ.Security.OAuth.Shared.projitems*{89fee45e-51a3-49bb-b864-0dca6e50e75e}*SharedItemsImports = 13
 		Shared\LZ.Commanding.Shared\LZ.Commanding.Shared.projitems*{dfa42b3c-fd6a-4e19-8851-86497f5413a6}*SharedItemsImports = 13
 		Shared\LZ.Net.Shared\LZ.Net.Shared.projitems*{e7523ee1-081a-4e93-a46f-362f917613e7}*SharedItemsImports = 13
@@ -45,18 +42,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Debug|x64.Build.0 = Debug|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Debug|x86.Build.0 = Debug|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Release|x64.ActiveCfg = Release|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Release|x64.Build.0 = Release|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Release|x86.ActiveCfg = Release|Any CPU
-		{09BD24F6-A9B8-4017-8189-8BB57AEEDF33}.Release|x86.Build.0 = Release|Any CPU
 		{0D510C9C-31ED-4776-AFE7-870DCF3A64F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0D510C9C-31ED-4776-AFE7-870DCF3A64F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D510C9C-31ED-4776-AFE7-870DCF3A64F4}.Debug|x64.ActiveCfg = Debug|Any CPU
@@ -141,6 +126,18 @@ Global
 		{A8FEF9C4-7F95-49D7-AD0A-E5B7ED00A6DE}.Release|x64.Build.0 = Release|Any CPU
 		{A8FEF9C4-7F95-49D7-AD0A-E5B7ED00A6DE}.Release|x86.ActiveCfg = Release|Any CPU
 		{A8FEF9C4-7F95-49D7-AD0A-E5B7ED00A6DE}.Release|x86.Build.0 = Release|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Debug|x64.Build.0 = Debug|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Debug|x86.Build.0 = Debug|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Release|x64.ActiveCfg = Release|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Release|x64.Build.0 = Release|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Release|x86.ActiveCfg = Release|Any CPU
+		{6A11448B-74B2-4321-902E-57790B90234F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
